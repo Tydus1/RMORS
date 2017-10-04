@@ -436,10 +436,10 @@
 1882,Baba-Yaga,71428
 1883,Uzhas,71428
 1884,Mavka,71428
-1918,Incarnation of Morroc,71428
-1919,Incarnation of Morroc,71428
-1920,Incarnation of Morroc,71428
-1921,Incarnation of Morroc,71428
+//1918,Incarnation of Morroc,71428
+//1919,Incarnation of Morroc,71428
+//1920,Incarnation of Morroc,71428
+//1921,Incarnation of Morroc,71428
 1974,Banshee Master,71428
 1975,Beholder Master,71428
 1976,Cobalt Mineral,71428

@@ -166,7 +166,7 @@ OnInit:
 	sellitem Booby_Trap;
 }
 
-moc_ruins,114,63,6	trader	Tool Dealer#moc2	4W_M_03,{
+morocc,146,103,6	trader	Tool Dealer#moc2	4W_M_03,{
 OnInit:
 	sellitem Arrow;
 	sellitem Spectacles;

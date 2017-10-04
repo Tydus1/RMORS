@@ -1193,13 +1193,13 @@ OnTouch:
 	end;
 }
 
-prontera,164,304,3	duplicate(ConMessenger)	Continental Messenger#01	4_M_MOCASS1,3,3
-geffen,128,90,3	duplicate(ConMessenger)	Continental Messenger#02	4_M_MOCASS1,3,3
-payon,200,113,3	duplicate(ConMessenger)	Continental Messenger#03	4_M_MOCASS1,3,3
-alberta,127,64,3	duplicate(ConMessenger)	Continental Messenger#04	4_M_MOCASS2,3,3
-aldebaran,135,128,3	duplicate(ConMessenger)	Continental Messenger#05	4_M_MOCASS2,3,3
+//prontera,164,304,3	duplicate(ConMessenger)	Continental Messenger#01	4_M_MOCASS1,3,3
+//geffen,128,90,3	duplicate(ConMessenger)	Continental Messenger#02	4_M_MOCASS1,3,3
+//payon,200,113,3	duplicate(ConMessenger)	Continental Messenger#03	4_M_MOCASS1,3,3
+//alberta,127,64,3	duplicate(ConMessenger)	Continental Messenger#04	4_M_MOCASS2,3,3
+//aldebaran,135,128,3	duplicate(ConMessenger)	Continental Messenger#05	4_M_MOCASS2,3,3
 
-morocc,176,103,3	script	Continental Official	4_M_SAGE_A,{
+morocc,300,300,3	script	Continental Official	4_M_SAGE_A,{
 	if (rebirth_moc_edq > 3) {
 		mes "[Continental Guard Official]";
 		mes "On behalf of the Continental Guard, I thank you for your efforts. Now, let me see if I've received any news from Headquarters that you should know...";
@@ -1273,7 +1273,7 @@ morocc,176,103,3	script	Continental Official	4_M_SAGE_A,{
 	}
 }
 
-morocc,159,113,3	script	Chief Balrog	4_M_CRU_OLD,{
+morocc,300,300,3	script	Chief Balrog	4_M_CRU_OLD,{
 	if (rebirth_moc_edq == 0) {
 		mes "[Chief Balrog]";
 		mes "You've come here at a bad time, but it's nice to meet you. I'm Continental Guard Chief Balrog. We've been dispatched to Morroc in order to suppress Satan Morroc... We'll need all the strength and luck we can gather.";

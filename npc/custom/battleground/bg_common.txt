@@ -26,12 +26,12 @@
 	end;
 }
 
-payon,189,104,3	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit1	4_F_JOB_KNIGHT
-prontera,123,83,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit2	4_F_JOB_KNIGHT
-rachel,149,138,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit3	4_F_JOB_KNIGHT
-moc_ruins,75,162,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit4	4_F_JOB_KNIGHT
-aldebaran,146,109,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit5	4_F_JOB_KNIGHT
-lighthalzen,153,86,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit6	4_F_JOB_KNIGHT
+//payon,189,104,3	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit1	4_F_JOB_KNIGHT
+//prontera,123,83,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit2	4_F_JOB_KNIGHT
+//rachel,149,138,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit3	4_F_JOB_KNIGHT
+//moc_ruins,75,162,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit4	4_F_JOB_KNIGHT
+//aldebaran,146,109,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit5	4_F_JOB_KNIGHT
+//lighthalzen,153,86,5	duplicate(BatRecruit)	Maroll Battle Recruiter::BatRecruit6	4_F_JOB_KNIGHT
 
 // BattleGround Warper - Exit
 // *********************************************************************
