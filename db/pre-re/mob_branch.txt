@@ -414,8 +414,8 @@
 1783,Galion,71428
 1784,Stapo,142857
 1789,Iceicle,71428
-1796,Aunoe,142857
-1797,Fanat,142857
+//1796,Aunoe,142857
+//1797,Fanat,142857
 1829,Sword Guardian,71428
 1830,Bow Guardian,71428
 1831,Salamander,71428
@@ -440,23 +440,23 @@
 //1919,Incarnation of Morroc,71428
 //1920,Incarnation of Morroc,71428
 //1921,Incarnation of Morroc,71428
-1974,Banshee Master,71428
-1975,Beholder Master,71428
-1976,Cobalt Mineral,71428
-1977,Heavy Metaling,71428
-1978,Hell Vesper,71428
-1979,Zakudam,71428
-1986,Tatacho,71428
-1987,Centipede,71428
-1988,Nepenthes,71428
-1989,Hillthrion,71428
-1990,Hardrock Mammoth,71428
-1991,Tendrillion,71428
-1992,Cornus,71428
-1993,Naga,71428
-1994,Luciola Vespa,71428
-1995,Pinguicula,71428
-1999,Centipede Larva,71428
+//1974,Banshee Master,71428
+//1975,Beholder Master,71428
+//1976,Cobalt Mineral,71428
+//1977,Heavy Metaling,71428
+//1978,Hell Vesper,71428
+//1979,Zakudam,71428
+//1986,Tatacho,71428
+//1987,Centipede,71428
+//1988,Nepenthes,71428
+//1989,Hillthrion,71428
+//1990,Hardrock Mammoth,71428
+//1991,Tendrillion,71428
+//1992,Cornus,71428
+//1993,Naga,71428
+//1994,Luciola Vespa,71428
+//1995,Pinguicula,71428
+//1999,Centipede Larva,71428
 2013,Draco,71428
 2015,Dark Pinguicula,71428
 2016,Aqua Elemental,71428
