@@ -110,7 +110,7 @@ hugel,88,168,4	script	Cool Event Corp. Staff::CoolEventCorpStaffHugel	4_M_ZONDAM
 	end;
 }
 
-rachel,109,138,5	script	Cool Event Corp. Staff::CoolEventCorpStaffRachel	4_M_ZONDAMAN,{
+rachel,250,260,5	script	Cool Event Corp. Staff::CoolEventCorpStaffRachel	4_M_ZONDAMAN,{
 	callfunc "F_KafSet";
 	callfunc "F_ZondaStaff", 1, "in the town of Rachel.";
 	savepoint "rachel",113,137;

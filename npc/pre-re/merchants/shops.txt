@@ -144,8 +144,8 @@ OnInit:
 	sellitem The_Cyclone;
 	sellitem Rolling_Stone;
 	sellitem Black_Rose;
-	sellitem Long_Barrel;
-	sellitem Jungle_Carbine;
+//	sellitem Long_Barrel;
+//	sellitem Jungle_Carbine;
 	sellitem Thunder_P;
 }
 
@@ -338,8 +338,8 @@ OnInit:
 	sellitem The_Cyclone;
 	sellitem Rolling_Stone;
 	sellitem Black_Rose;
-	sellitem Long_Barrel;
-	sellitem Jungle_Carbine;
+//	sellitem Long_Barrel;
+//	sellitem Jungle_Carbine;
 	sellitem Thunder_P;
 }
 
