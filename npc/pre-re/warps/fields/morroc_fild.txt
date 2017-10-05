@@ -105,8 +105,8 @@ moc_fild12,118,30,0	warp	mocf24	4,2,moc_fild18,158,379
 moc_fild12,159,381,0	warp	mocf003	2,2,morocc,160,20
 moc_fild12,289,168,0	warp	mocf22-1	2,3,moc_fild11,29,161
 moc_fild13,146,368,0	warp	mocf05-1	5,2,moc_fild02,71,21
-//moc_fild13,29,171,0	warp	mocf17-1	2,4,moc_fild08,380,211
-moc_fild13,32,171,0	warp	mocf17-1	2,4,moc_fild20,349,179
+moc_fild13,29,171,0	warp	mocf17-1	2,4,moc_fild08,380,211
+//moc_fild13,32,171,0	warp	mocf17-1	2,4,moc_fild20,349,179
 moc_fild13,298,370,0	warp	mocf03-1	4,2,moc_fild02,228,32
 moc_fild13,308,49,0	warp	mocf06-1	2,4,moc_fild03,20,37
 moc_fild14,16,278,0	warp	mocf25	2,6,moc_fild15,364,276
