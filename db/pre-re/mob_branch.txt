@@ -416,14 +416,14 @@
 1789,Iceicle,71428
 //1796,Aunoe,142857
 //1797,Fanat,142857
-1829,Sword Guardian,71428
-1830,Bow Guardian,71428
-1831,Salamander,71428
-1833,Kasa,71428
-1836,Magmaring,214285
-1837,Imp,71428
-1838,Knocker,71428
-1839,Byrogue,71428
+//1829,Sword Guardian,71428
+//1830,Bow Guardian,71428
+//1831,Salamander,71428
+//1833,Kasa,71428
+//1836,Magmaring,214285
+//1837,Imp,71428
+//1838,Knocker,71428
+//1839,Byrogue,71428
 //1864,Zombie Slaughter,71428
 //1865,Ragged Zombie,71428
 //1866,Hellhound,71428
