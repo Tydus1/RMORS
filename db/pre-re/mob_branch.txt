@@ -87,7 +87,7 @@
 1095,Andre,357142
 1096,Angeling,71428
 1097,Ant Egg,71428
-1098,Anubis,71428
+//1098,Anubis,71428
 1099,Argiope,71428
 1100,Argos,214285
 1101,Baphomet Jr.,71428
@@ -424,12 +424,12 @@
 1837,Imp,71428
 1838,Knocker,71428
 1839,Byrogue,71428
-1864,Zombie Slaughter,71428
-1865,Ragged Zombie,71428
-1866,Hellhound,71428
-1867,Banshee,71428
-1869,Flame Skull,71428
-1870,Necromancer,71428
+//1864,Zombie Slaughter,71428
+//1865,Ragged Zombie,71428
+//1866,Hellhound,71428
+//1867,Banshee,71428
+//1869,Flame Skull,71428
+//1870,Necromancer,71428
 1872,Hell Fly,71428
 1880,Wood Goblin,71428
 1881,Les,71428
