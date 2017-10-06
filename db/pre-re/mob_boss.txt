@@ -47,4 +47,4 @@
 //1871,Falling Bishop,1000000
 //1873,Beelzebub,1000000
 //1885,Gopinich,1000000
-2022,Nidhoggur's Shadow,1000000
+//2022,Nidhoggur's Shadow,1000000
