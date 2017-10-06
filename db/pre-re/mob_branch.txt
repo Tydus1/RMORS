@@ -339,8 +339,8 @@
 1628,Holden,71428
 1629,Hill Wind,71428
 1631,Green Maiden,71428
-1632,Gremlin,71428
-1633,Beholder,71428
+//1632,Gremlin,71428
+//1633,Beholder,71428
 1634,Seyren Windsor,71428
 1635,Eremes Guile,71428
 1636,Howard Alt-Eisen,71428
@@ -368,7 +368,7 @@
 1677,Venatu,71428
 1678,Venatu,71428
 1679,Venatu,71428
-1680,Hill Wind,71428
+//1680,Hill Wind,71428
 1681,Gemini-S58,71428
 1682,Remover,71428
 1686,Orc Baby,71428
