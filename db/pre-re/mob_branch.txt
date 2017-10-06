@@ -398,22 +398,22 @@
 1753,Frus,71428
 1754,Skeggiold,71428
 1755,Skeggiold,71428
-1769,Agav,71428
-1770,Echio,71428
-1771,Vanberk,71428
-1772,Isilla,71428
-1773,Hodremlin,71428
-1774,Seeker,71428
-1775,Snowier,71428
-1776,Siroma,71428
-1777,Ice Titan,71428
-1778,Gazeti,71428
-1780,Muscipular,71428
-1781,Drosera,71428
-1782,Roween,71428
-1783,Galion,71428
-1784,Stapo,142857
-1789,Iceicle,71428
+//1769,Agav,71428
+//1770,Echio,71428
+//1771,Vanberk,71428
+//1772,Isilla,71428
+//1773,Hodremlin,71428
+//1774,Seeker,71428
+//1775,Snowier,71428
+//1776,Siroma,71428
+//1777,Ice Titan,71428
+//1778,Gazeti,71428
+//1780,Muscipular,71428
+//1781,Drosera,71428
+//1782,Roween,71428
+//1783,Galion,71428
+//1784,Stapo,142857
+//1789,Iceicle,71428
 //1796,Aunoe,142857
 //1797,Fanat,142857
 //1829,Sword Guardian,71428

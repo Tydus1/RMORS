@@ -738,24 +738,24 @@ OnTimer160000:
 	mapannounce("airplane_01", _("The Airship is leaving the ground. Our next destination is Rachel."), bc_map, "0xFF8200");
 	end;
 OnTimer185000:
-	mapannounce("airplane_01", _("We are heading to Rachel."), bc_map, "0xFF8200");
+	mapannounce("airplane_01", _("We are NOT heading to Rachel due a severe sandstorm."), bc_map, "0xFF8200");
 	end;
-OnTimer210000:
-	mapannounce("airplane_01", _("We will arrive in Rachel shortly."), bc_map, "0xFF8200");
-	end;
-OnTimer220000:
-	$@airplanelocation2 = 0;
-	donpcevent "#AirshipWarp-3::OnUnhide";
-	donpcevent "#AirshipWarp-4::OnUnhide";
-	mapannounce("airplane_01", _("Welcome to Rachel. Have a safe trip."), bc_map, "0xFF8200");
-	end;
+//OnTimer210000:
+//	mapannounce("airplane_01", _("We will arrive in Rachel shortly."), bc_map, "0xFF8200");
+//	end;
+//OnTimer220000:
+//	$@airplanelocation2 = 0;
+//	donpcevent "#AirshipWarp-3::OnUnhide";
+//	donpcevent "#AirshipWarp-4::OnUnhide";
+//	mapannounce("airplane_01", _("Welcome to Rachel. Have a safe trip."), bc_map, "0xFF8200");
+//	end;
 OnTimer230000:
-	mapannounce("airplane_01", _("We are currently in Rachel. The Airship will take off shortly."), bc_map, "0xFF8200");
+	mapannounce("airplane_01", _("We are currently tracking a way out of the sandstorme."), bc_map, "0xFF8200");
 	end;
 OnTimer240000:
 	donpcevent "#AirshipWarp-3::OnHide";
 	donpcevent "#AirshipWarp-4::OnHide";
-	mapannounce("airplane_01", _("The Airship is now taking off. Our next destination is Izlude."), bc_map, "0x00ff00");
+	mapannounce("airplane_01", _("The Airship is now heading to Izlude."), bc_map, "0x00ff00");
 	stopnpctimer;
 	++.moninv;
 	if (.moninv == 7) {
