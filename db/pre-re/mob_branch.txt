@@ -430,12 +430,12 @@
 //1867,Banshee,71428
 //1869,Flame Skull,71428
 //1870,Necromancer,71428
-1872,Hell Fly,71428
-1880,Wood Goblin,71428
-1881,Les,71428
-1882,Baba-Yaga,71428
-1883,Uzhas,71428
-1884,Mavka,71428
+//1872,Hell Fly,71428
+//1880,Wood Goblin,71428
+//1881,Les,71428
+//1882,Baba-Yaga,71428
+//1883,Uzhas,71428
+//1884,Mavka,71428
 //1918,Incarnation of Morroc,71428
 //1919,Incarnation of Morroc,71428
 //1920,Incarnation of Morroc,71428
