@@ -3063,11 +3063,11 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		}
 #endif
 
-		if(sc->data[SC_DEFENDER] &&
+		if(sc->data[SC_DEFENDER] && 
 #ifdef RENEWAL
 			((flag&(BF_LONG|BF_WEAPON)) == (BF_LONG|BF_WEAPON) || skill_id == CR_ACIDDEMONSTRATION))
 #else
-			(flag&(BF_LONG|BF_WEAPON)) == (BF_LONG|BF_WEAPON)) // In pre-re Defender doesn't reduce damage from Acid Demonstration
+			((flag&(BF_LONG|BF_WEAPON)) == (BF_LONG|BF_WEAPON)  || skill_id == AC_CHARGEARROW || skill_id == AC_DOUBLE || skill_id == SN_SHARPSHOOTING || skill_id == AC_SHOWER || skill_id == NPC_WINDATTACK || skill_id == NPC_COMBOATTACK || skill_id == NPC_STUNATTACK || skill_id == KN_SPEARBOOMERANG || skill_id == LK_SPIRALPIERCE || skill_id == AS_GRIMTOOTH || skill_id == NPC_CRITICALSLASH)) // In pre-re Defender doesn't reduce damage from Acid Demonstration 
 #endif
 			damage = damage * ( 100 - sc->data[SC_DEFENDER]->val2 ) / 100;
 

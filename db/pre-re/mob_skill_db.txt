@@ -7,7 +7,7 @@
 // RATE: the chance of the skill being casted when the condition is fulfilled (10000 = 100%).
 // DELAY: the time (in milliseconds) before attempting to recast the same skill.
 //
-// STATE:
+// STATE: 
 //	any (except dead) / idle (in standby) / walk (in movement) / dead (on killed) /
 //	loot /attack / angry (like attack, except player has not attacked mob yet) /
 //	chase (following target, after being attacked) / follow (following target,

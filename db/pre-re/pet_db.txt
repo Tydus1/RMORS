@@ -65,7 +65,7 @@
 1042,STEEL_CHONCHON,Steel ChonChon,625,9007,10002,1002,80,60,20,100,250,20,1000,150,1,0,500,500,200,{ petskillbonus bAgiVit,4,20,40; },{ bonus bFlee,6; bonus bAgi,-1; }
 1049,PICKY,Picky,623,9005,10012,507,80,60,40,100,250,20,2000,150,1,0,500,600,50,{ petskillbonus bStr,3,10,50;},{ bonus bStr,1; bonus bAtk,5; }
 1052,ROCKER,Rocker,629,9011,10014,537,80,60,30,100,250,20,1500,150,0,0,350,350,600,{ petskillbonus bAllStats,1,10,50; },{ bonus bHPrecovRate,5; bonus bMaxHP,25; }
-1056,SMOKIE,Smokie,633,9015,10019,537,80,60,30,100,250,20,1000,150,1,0,600,600,100,{ petskillbonus bPerfectHide,1,3600,0; },{ bonus bAgi,1; bonus bFlee2,1; }
+1056,SMOKIE,Smokie,633,9015,10019,537,80,60,30,100,250,20,1000,150,1,0,600,600,100,{ petskillbonus bPerfectHide,1,3600,1; },{ bonus bAgi,1; bonus bFlee2,1; }
 1057,YOYO,Yoyo,634,9016,10018,532,80,60,20,100,250,20,1000,150,1,0,300,800,400,{ petloot 20; },{ bonus bCritical,3; bonus bLuk,-1; }
 1063,LUNATIC,Lunatic,622,9004,10007,534,80,60,40,100,250,20,1500,150,0,0,300,300,1000,{ petskillbonus bLuk,3,10,50; },{ bonus bCritical,2; bonus bAtk,2; }
 1077,POISON_SPORE,Poison Spore,631,9013,10017,537,80,60,20,100,250,20,1000,150,0,0,600,200,400,{ petskillattack "NPC_POISON",20,0,0,10; },{ bonus bStr,1; bonus bInt,1; }
