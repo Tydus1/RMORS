@@ -614,6 +614,9 @@ CREATE TABLE IF NOT EXISTS `login` (
   `character_slots` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   `pincode` VARCHAR(4) NOT NULL DEFAULT '',
   `pincode_change` INT(11) UNSIGNED NOT NULL DEFAULT '0',
+  `last_unique_id` INT( 11 ) UNSIGNED NOT NULL DEFAULT  '0',
+  `blocked_unique_id` INT( 11 ) UNSIGNED NOT NULL DEFAULT  '0',
+  `dayVip` INT( 11 ) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`account_id`),
   KEY `name` (`userid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2000000;
@@ -969,3 +972,23 @@ CREATE TABLE IF NOT EXISTS `rodex_mail` (
   KEY `send_date` (`send_date`),
   KEY `expire_date` (`expire_date`)
 ) ENGINE=MyISAM;
+
+CREATE TABLE IF NOT EXISTS `gepard_block_log` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `unique_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `block_time` datetime NOT NULL,
+  `unban_time` datetime NOT NULL,
+  `violator_name` varchar(24) NOT NULL,
+  `violator_account_id` int(11) NOT NULL,
+  `initiator_name` varchar(24) NOT NULL,
+  `initiator_account_id` int(11) NOT NULL,
+  `reason` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `gepard_block` (
+  `unique_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `unban_time` datetime NOT NULL,
+  `reason` varchar(50) NOT NULL,
+  UNIQUE KEY `unique_id` (`unique_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;

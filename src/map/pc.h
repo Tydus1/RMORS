@@ -414,6 +414,9 @@ END_ZEROED_BLOCK;
 	// The following structures are zeroed manually in status_calc_pc_
 	struct s_autobonus autobonus[MAX_PC_BONUS], autobonus2[MAX_PC_BONUS], autobonus3[MAX_PC_BONUS]; //Auto script on attack, when attacked, on skill usage
 
+	// LGP by Functor
+	unsigned int lgp_settings;
+	// LGP by Functor
 	int castrate,delayrate,hprate,sprate,dsprate;
 	int hprecov_rate,sprecov_rate;
 	int matk_rate;
@@ -1140,5 +1143,15 @@ void pc_defaults(void);
 #endif // HERCULES_CORE
 
 HPShared struct pc_interface *pc;
-
+// LGP by Functor
+enum
+{
+	LGP_ENABLED	= 0x00010000,
+	LGP_SQUARE	= 0x00020000,	
+	LGP_CIRCLE	= 0x00040000,
+	LGP_AOES	= 0x00080000,
+	LGP_SHAKE	= 0x00100000
+};
+// LGP by Functor
+void pc_lgp_update_settings (struct map_session_data* sd);
 #endif /* MAP_PC_H */

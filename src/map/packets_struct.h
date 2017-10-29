@@ -1100,6 +1100,9 @@ struct packet_skill_entry {
 #if PACKETVER >= 20130731
 	uint8 level;
 #endif
+	// LGP by Functor
+	unsigned int unit_tick;
+	// LGP by Functor
 } __attribute__((packed));
 
 struct packet_graffiti_entry {

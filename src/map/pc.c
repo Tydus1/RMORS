@@ -1450,6 +1450,18 @@ int pc_reg_received(struct map_session_data *sd)
 
 	// Cooking Exp
 	sd->cook_mastery = pc_readglobalreg(sd,script->add_str("COOK_MASTERY"));
+	// LGP by Functor
+	sd->lgp_settings = pc_readglobalreg(sd, script->add_str("LGP_SETTINGS"));
+
+	if (!sd->lgp_settings)
+	{
+		sd->lgp_settings = (LGP_CIRCLE | LGP_SQUARE | LGP_AOES);
+		sd->lgp_settings += 10;
+		pc_setglobalreg(sd, script->add_str("LGP_SETTINGS"), sd->lgp_settings);
+	}
+
+	pc_lgp_update_settings(sd);
+	// LGP by Functor
 
 	if ((sd->job & MAPID_BASEMASK) == MAPID_TAEKWON) {
 		// Better check for class rather than skill to prevent "skill resets" from unsetting this
@@ -12369,4 +12381,13 @@ void pc_defaults(void) {
 	pc->have_magnifier = pc_have_magnifier;
 
 	pc->check_basicskill = pc_check_basicskill;
+}
+void pc_lgp_update_settings(struct map_session_data* sd)
+{
+	WFIFOHEAD(sd->fd, 12);
+	WFIFOW(sd->fd,0) = 0x8D;
+	WFIFOW(sd->fd,2) = 12;
+	WFIFOL(sd->fd,4) = sd->lgp_settings;
+	WFIFOL(sd->fd,8) = 0x1;
+	WFIFOSET(sd->fd, 12);
 }

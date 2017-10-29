@@ -45,3 +45,5 @@ bool ipban_config_read(const char *filename, struct config_t *config, bool impor
 #endif // HERCULES_CORE
 
 #endif /* LOGIN_IPBAN_H */
+bool gepard_check_unique_id(int fd, uint32 unique_id);
+void gepard_update_last_unique_id(int account_id, uint32 unique_id);

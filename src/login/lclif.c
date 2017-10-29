@@ -366,7 +366,7 @@ int lclif_parse(int fd)
 		// Perform ip-ban check
 		if (login->config->ipban && !sockt->trusted_ip_check(ipl) && ipban_check(ipl)) {
 			ShowStatus("Connection refused: IP isn't authorized (deny/allow, ip: %s).\n", ip);
-			login_log(ipl, "unknown", -3, "ip banned");
+			login_log(fd, ipl, "unknown", -3, "ip banned");
 			lclif->login_error(fd, 3); // 3 = Rejected from Server
 			sockt->eof(fd);
 			return 0;
@@ -385,6 +385,22 @@ int lclif_parse(int fd)
 
 		if (packet_len < 2)
 			return 0;
+				// Gepard Shield by Functor
+		if (is_gepard_active == true)
+		{
+			bool is_processed = gepard_process_packet(fd, sockt->session[fd]->rdata + sockt->session[fd]->rdata_pos, 0, &sockt->session[fd]->recv_crypt);
+
+			if (is_processed == true)
+			{
+				if (packet_id == CS_GEPARD_INIT_ACK)
+				{
+					gepard_check_unique_id(fd, sockt->session[fd]->gepard_info.unique_id);
+				}
+
+				return 0;
+			}
+		}
+		// Gepard Shield by Functor
 
 		result = lclif->p->parse_sub(fd, sd);
 
