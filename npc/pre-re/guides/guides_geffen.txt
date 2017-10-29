@@ -188,4 +188,4 @@ geffen,203,116,0	script	Guide#gef::GefGuide	4_M_GEF_SOLDIER,{
 	end;
 }
 
-geffen,118,62,0	duplicate(GefGuide)	Guide#2gef	4_M_GEF_SOLDIER
+geffen,109,66,3	duplicate(GefGuide)	Guide#2gef	4_M_GEF_SOLDIER

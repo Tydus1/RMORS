@@ -92,9 +92,9 @@ gonryun,180,118,4	script	Iron man#gnp	4_M_03,{
 			mes "[Songmoodoo]";
 			mes "Good! Haha.";
 			mes "I like your confidence.";
-			mes "Good luck to you~";
+			mes "But the arena is closed by ADM~";
 			close2;
-			warp "gon_test",53,6;
+			//warp "gon_test",53,6;
 			end;
 		} else {
 			mes "[Songmoodoo]";
@@ -170,7 +170,7 @@ gon_test,50,14,4	script	Administrator#gnp	8_M_TWSOLDIER,{
 	end;
 }
 
-gon_test,42,89,4	script	Summoner#gnp	4_M_TWBOY,{
+/*gon_test,42,89,4	script	Summoner#gnp	4_M_TWBOY,{
 	mes "[SongYeunWoo]";
 	if (in_battle == 3) {
 		mes "Please come back after registration.";
@@ -245,7 +245,7 @@ OnTimer184000:
 	areawarp "gon_test",41,81,74,92,"gon_test",44,4;
 	$@in_battle = 0;
 	end;
-}
+}*/
 
 gon_test,46,14,3	script	Guide of field of fight	4_F_TWGIRL,{
 	mes "[SongHeeYeon]";
@@ -296,20 +296,19 @@ gon_test,46,14,3	script	Guide of field of fight	4_F_TWGIRL,{
 	close;
 }
 
-gon_test,70,103,3	script	ChowAnAn#gnp	4_F_TWMIDWOMAN,{
-	mes "[ChowAnAn]";
-	mes "Want to go back?";
+gon_test,50,82,6	script	Assistente Namida#gnp	4_F_TWMIDWOMAN,{
+	mes "[^900090Namida^000000]";
+	mes "Olá, você deseja voltar para a cidade??";
 	next;
-	if (select("Yes.", "No.") == 1) {
-		mes "[ChowAnAn]";
-		mes "Thank you.";
-		mes "Please come again.";
+	if (select("Sim.", "Não.") == 1) {
+		mes "[^900090Namida^000000]";
+		mes "Certo, Obrigado por participar do evento.";
 		close2;
 		in_battle = 1;
-		warp "gon_test",44,4;
+		warp "prontera",156,175;
 		end;
 	}
-	mes "[ChowAnAn]";
-	mes "Thank you.";
+	mes "[^900090Namida^000000]";
+	mes "Tá bom, fique o tempo que desejar.";
 	close;
 }

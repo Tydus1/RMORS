@@ -63,7 +63,7 @@ alberta,111,59,5	script	Bulletin Board#1	2_BULLETIN_BOARD,{
 	close;
 }
 
-geffen,124,65,5	script	Bulletin Board#2	2_BULLETIN_BOARD,{
+geffen,124,67,5	script	Bulletin Board#2	2_BULLETIN_BOARD,{
 	mes "[Geffen: The City of Magic]";
 	mes "Welcome to Geffen, the City of Magic. Geffen is well known for its various legends related to magic.";
 	next;

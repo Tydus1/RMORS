@@ -37,6 +37,7 @@
 
 // Main Room Warps
 //============================================================
+//prontera,149,172,0	warp	testestes	1,1,jupe_ele,42,51
 arena_room,84,103,0	warp	arn_room_11_1	1,1,arena_room,63,130
 arena_room,63,126,0	warp	arn_room_11_2	1,1,arena_room,87,100
 arena_room,76,87,0	warp	arn_room_9_1	1,1,arena_room,46,87

@@ -310,3 +310,6 @@ que_lhz	mapflag	nosave	SavePoint
 // Poring War ====================
 poring_w01	mapflag	nosave	SavePoint
 poring_w02	mapflag	nosave	SavePoint
+
+// RagnaMinions Sala vip ====================
+ra_temsky	mapflag	nosave	SavePoint

@@ -73,7 +73,7 @@ ra_temin,275,332,0	warp	rachel32	1,1,ra_temin,27,305
 
 //ra_temin,275,226,0	warp	rachel33	1,1,ra_temsky,99,11
 
-ra_temsky,99,118,0	warp	rachel34	1,1,ra_temsky,99,140
+//ra_temsky,99,118,0	warp	rachel34	1,1,ra_temsky,99,140
 ra_temsky,112,143,0	warp	rachel35	1,1,ra_temsky,141,139
 ra_temsky,87,143,0	warp	rachel36	1,1,ra_temsky,58,139
 
@@ -117,7 +117,7 @@ ra_temin,27,299,0	warp	rachel69	1,1,ra_temin,275,328
 
 ra_temsky,99,8,0	warp	rachel70	1,1,ra_temin,275,231
 
-ra_temsky,99,135,0	warp	rachel71	1,1,ra_temsky,99,113
+//ra_temsky,99,135,0	warp	rachel71	1,1,ra_temsky,99,113
 ra_temsky,137,139,0	warp	rachel72	1,1,ra_temsky,109,143
 ra_temsky,62,139,0	warp	rachel73	1,1,ra_temsky,91,143
 

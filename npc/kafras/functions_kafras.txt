@@ -102,7 +102,13 @@ function	script	F_Kafra	{
 			mes "far from home.";
 			break;
 		case 5:
-			// NPC has it's own welcome message. (Display nothing)
+				mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Seja muito bem vindo ao Ragnaminions!!";
+			mes "Se você não for novato não tem problema,";
+			mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Por favor, me diga em que eu posso ser útil.";
 			break;
 	}
 	next;
@@ -118,7 +124,7 @@ function	script	F_Kafra	{
 				// Storage only
 				case 2:	setarray @K_Menu0$[0],"Use Storage","Cancel"; break;
 				// No Teleport (Common)
-				case 3: setarray @K_Menu0$[0],"Save","Use Storage","Rent a Pushcart","Check Other Information","Cancel"; break;
+				case 3: setarray @K_Menu0$[0],"Salvar ponto de retorno","Usar Armazém","Alugar um Carrinho","Verificar notícias","Cancelar"; break;
 				// Case 4 is Einbroch no tele message.
 				// No save, or teleport. (Common)
 				case 5:	setarray @K_Menu0$[0],"Use Storage","Rent a Pushcart","Check Other Information","Cancel"; break;

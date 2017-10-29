@@ -41,87 +41,87 @@
 //=========================================================================
 
 //== Bulletin Board ========================================
-new_1-1,66,114,4	script	Bulletin Board#nv	HIDDEN_NPC,{
+new_1-1,66,114,4	script	Placa de aviso#nv	HIDDEN_NPC,{
 	mes "^FF0000=================================^000000";
-	mes "^E40CAA[Welcome]^CC0000 to ^FF9000Novice^7FFF00 Training ^00FF00Grounds ^E40CAA[Welcome]^000000";
+	mes "^E40CAA[Bem vindo]^CC0000 ao ^FF9000Campo de treinamento^7FFF00 dos ^00FF00Aprendizes ^E40CAA[Bem vindo]^000000";
 	mes "^FF0000=================================^000000";
 	close;
 }
 
-new_1-1,144,116,2	script	Guard#nv1	8W_SOLDIER,{
-	mes "[Training Grounds Guard]";
-	mes "Welcome to the Training Grounds.";
-	mes "You are now in the outer court yard. Please go inside the castle to begin your training.";
+new_1-1,144,116,2	script	Guarda#nv1	8W_SOLDIER,{
+	mes "[Guarda]";
+	mes "Bem vindo ao campo de treinamento.";
+	mes "Você está nos jardins de fora. Por favor, entre no castelo para começar seu treinamento.";
 	close;
 }
 
-new_1-1,144,107,2	script	Guard#nv2	8W_SOLDIER,{
-	mes "[Training Grounds Guard]";
+new_1-1,144,107,2	script	Guarda#nv2	8W_SOLDIER,{
+	mes "[Guarda]";
 	if(rand(2)) {
-		mes "Come in!";
-		mes "I would like";
-		mes "to welcome you to";
-		mes "the Training Grounds!";
+		mes "Venha aqui!";
+		mes "Eu gostaria de";
+		mes "desejar as boas vindas";
+		mes "ao campo de treinamento!";
 		next;
-		mes "[Training Grounds Guard]";
-		mes "In here, you can prepare";
-		mes "yourself for your future";
-		mes "adventures throughout the";
-		mes "Ragnarok world!";
+		mes "[Guarda]";
+		mes "Aqui você pode se preparar";
+		mes "para as futuras";
+		mes "aventuras que estão por vir";
+		mes "no mundo de Ragnarok!";
 	}
 	else {
-		mes "Go, Novice, go!";
-		mes "Fight, and grow stronger! Look towards a brighter tomorrow!";
+		mes "Vá, Aprendiz, vá!!";
+		mes "Lute e cresça forte! Sonhe com um futuro brilhante!";
 	}
 	close;
 }
 
 //== Receptionist ==========================================
-new_1-2,100,29,4	script	Receptionist#nv1	4_M_04,{
-	mes "[Training Grounds Receptionist]";
-	mes "Hello, you look to be new here.";
-	mes "What is your name?";
+new_1-2,100,29,4	script	Recepcionista#nv1	4_M_04,{
+	mes "[Recepcionista]";
+	mes "Olá, você parece ser novo por aqui.";
+	mes "Qual o seu nome?";
 	next;
 	input .@charname$;
 	if (.@charname$!=strcharinfo(PC_NAME)) {
-		mes "[Training Grounds Receptionist]";
-		mes "Sorry, but I don't think I heard";
-		mes "you correctly";
+		mes "[Recepcionista]";
+		mes "Desculpe, mas eu acho que não escutei";
+		mes "você direito.";
 		close;
 	}
-	mes "[Training Grounds Receptionist]";
-	mes "Welcome!";
-	mes "You are at the entrance";
-	mes "of the ^3355FFTraining Grounds^000000.";
+	mes "[Recepcionista]";
+	mes "Bem vindo!";
+	mes "Você está na entrada";
+	mes "do ^3355FFcampo de treinamento.^000000.";
 	next;
-	mes "[Training Grounds Receptionist]";
-	mes "If you're new";
-	mes "to the Ragnarok world,";
-	mes "please choose the";
-	mes "^3355FFTraining Grounds Introduction^000000";
-	mes "menu for more information.";
+	mes "[Recepcionista]";
+	mes "Se você for novo";
+	mes "no mundo do Ragnarok,";
+	mes "por favor escolha o";
+	mes "^3355FFMenu de introdução ao campo de treinamento^000000";
+	mes "para mais informações.";
 	next;
 	while (1) {
-		switch(select("Apply for training.", "Direct access to Ragnarok Online.", "^3355FFTraining Grounds Introduction.^000000", "I need a moment to think.")) {
+		switch(select("Se inscrever no treinamento.", "Acessar diretamente o mundo.", "^3355FFIntrodução ao treinamento.^000000", "Preciso pensar um pouco.")) {
 		case 1:
-			mes "[Training Grounds Receptionist]";
-			mes "Thank you for applying for Novice training. For detailed information of each training course, please inquire the Guides for assistance.";
+			mes "[Recepcionista]";
+			mes "Obrigado por se inscrever no campo de treinamento dos aprendizes. Para mais informações sobre o curso de treinamento, pergunte para os guias assistentes.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "When you have questions about the training course process, please feel free to ask any of the Tutors.";
+			mes "[Recepcionista]";
+			mes "Quando você tiver alguma dúvida sobre o treinamento, sinta-se livre para perguntar a qualquer instrutor.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "You will now be transferred";
-			mes "to the Training Grounds.";
+			mes "[Recepcionista]";
+			mes "Você será transferido agora";
+			mes "para o campo e treinamento.";
 			close2;
 			warp "new_1-2",100,70;
 			end;
 		case 2:
 			mes "[Training Grounds Receptionist]";
-			mes "I understand.";
-			mes "Please do your";
-			mes "best, and I wish you";
-			mes "the best of luck!";
+			mes "Eu entendo.";
+			mes "Por favor, dê o seu melhor, ";
+			mes "e eu lhe desejo";
+			mes "toda a sorte que precisar!";
 			close2;
 			nov_1st_cos = 0;
 			nov_2nd_cos = 0;
@@ -158,37 +158,37 @@ new_1-2,100,29,4	script	Receptionist#nv1	4_M_04,{
 			}
 			end;
 		case 3:
-			mes "[Training Grounds Receptionist]";
-			mes "This training grounds was established in order to provide useful information to new players of Ragnarok Online by the Rune-Midgarts Kingdom's Board of Education.";
+			mes "[Recepcionista]";
+			mes "Esse campo de treinamento foi construído afim de prover informações úteis para jogadores novos, pelo conselho de educação o Reino de Rune-midgarts.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "The training course is organized into two parts: the Basic Knowledge classes, and Field Combat training.";
+			mes "[Recepcionista]";
+			mes "O curso de treinamento é organizado em duas partes: O conhecimento básico das classes e o treinamento de combate.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "Through the first course, players will learn the necessary knowledge for a smoother gaming experience.";
+			mes "[Recepcionista]";
+			mes "Através do primeiro curso, os jogadores irão aprender o conhecimento necessário para uma experiência suave de jogo.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "In Field Combat Training,";
-			mes "players will engage in actual battle with weak monsters so they can learn the basics of fighting.";
+			mes "[Recepcionista]";
+			mes "No treinamento de combate,";
+			mes "os jogadores irão se deparar com uma batalha de verdade contra monstros fracos para que eles possam aprender os princípios de um combate.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "With this battle practice,";
-			mes "players will be able to gain more experience before they enter the real world.";
+			mes "[Recepcionista]";
+			mes "Com a prática de combate,";
+			mes "jogadores estarão habilitados a ganhar mais experiência antes de entrarem no mundo real de Ragnarok.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "At the end of the training, we will provide an introduction to the 1st Job Classes. This will help players decide which job class is best for them.";
+			mes "[Recepcionista]";
+			mes "No final do treinamento, nós vamos prover uma introdução das primeiras classes. Isso irá ajudar os jogadores a decidir qual classes é a melhor para eles.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "If you wish to participate in the training grounds, please choose '^3355FFApply for training^000000' in the menu.";
+			mes "[Recepcionista]";
+			mes "Se você deseja participar do treinamento, por favor '^3355FFApply for training^000000' no menu.";
 			next;
-			mes "[Training Grounds Receptionist]";
-			mes "Otherwise, if you want to skip the basic training and immediately enter the world of Ragnarok Online, please choose '^3355FFDirect access to Ragnarok Online^000000.'";
+			mes "[Recepcionista]";
+			mes "Caso contrário, se desejar pular o campo de treinamento e ir imediatamente ao mundo de ragnarok, escolha '^3355FFAcesso direto ao mundo de Ragnarok^000000.'";
 			next;
 			break;
 		case 4:
-			mes "[Training Grounds Receptionist]";
-			mes "I understand.";
-			mes "Please, take your time.";
+			mes "[Recepcionista]";
+			mes "Eu entendo.";
+			mes "Tome o tempo que precisar.";
 			close;
 		}
 	}
