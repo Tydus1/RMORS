@@ -1,0 +1,130 @@
+//===== rAthena Script =======================================
+//= Yuwa The Healer
+//===== By: ==================================================
+//= Euphy
+//===== Current Version: =====================================
+//= 1.1
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Basic Yuwa The Healer script.
+//===== Additional Comments: =================================
+//= 1.0 Initial script.
+//= 1.1 Aligned coordinates with @go.
+//============================================================
+
+-	script	Yuwa The Healer	-1,{
+
+	.@Price = 0;	// Zeny required for heal
+	.@Buffs = 0;	// Also buff players? (1: yes / 0: no)
+	.@Delay = 3;	// Heal delay, in seconds
+
+	if (@HD > gettimetick(2))
+		end;
+	if (.@Price) {
+		message strcharinfo(0), "Healing costs " + callfunc("F_InsertComma",.@Price) + " Zeny.";
+		if (Zeny < .@Price)
+			end;
+		if (select("^0055FFHeal^000000:^777777Cancel^000000") == 2)
+			end;
+		Zeny -= .@Price;
+	}
+	if (getgroupid() >= 1 ) {
+	repairall();
+	specialeffect(EF_HEAL2, AREA, playerattached()); 
+	percentheal 100,100;
+	specialeffect(EF_INCAGILITY, AREA, playerattached());
+	sc_start SC_INC_AGI,240000,10;
+	specialeffect(EF_BLESSING, AREA, playerattached());
+	sc_start SC_BLESSING,240000,10;
+	if (.@Delay)
+		@HD = gettimetick(2) + .@Delay;
+	end;
+	close;
+	end;
+	}
+	else{	
+	cutin("malaya_nursea02", 2);
+	mes "[^FF1493 Yuwa - A curandeira^000000]";
+	mes "Olá, aventureiro(a)";
+	mes "Eu fui recrutada para ajudar os jogadores curando eles das";
+	mes "perigosas aventuras que eventualmente enfrentam.";
+	next;
+	mes "[^FF1493 Yuwa - A curandeira^000000]";
+	mes "Você deseja ser curado?";
+	next;
+	switch ( select ("Sim, por favor.","Não, posso me curar sozinho.")){
+			case 1:
+					skilleffect(AL_HEAL,0);
+					percentheal 100,100;
+					mes "[^FF1493 Yuwa - A curandeira^000000]";
+					mes "Pronto. Infelizmente ainda não posso";
+					mes "usar magias mais poderosas";
+					mes "mas espero que eu tenha ajudado";
+					close2();
+					cutin("", 255);
+					break;
+			case 2:
+					cutin("malaya_nursea03", 2);
+					mes "[^FF1493 Yuwa - A curandeira^000000]";
+					mes "Wooah, Isso foi inesperado!";
+					mes "Você poderia pelo menos ser mais gentil...";
+					close2();
+					cutin("", 255);
+					break;
+
+	}
+		if (.@Buffs) {
+		specialeffect(EF_INCAGILITY, AREA, playerattached()); sc_start SC_INC_AGI,240000,10;
+		specialeffect(EF_BLESSING, AREA, playerattached()); sc_start SC_BLESSING,240000,10;
+				
+	}
+	if (.@Delay)
+		@HD = gettimetick(2) + .@Delay;
+	end;
+}
+}
+
+
+// Duplicates
+//============================================================
+alberta,27,240,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#alb	4_F_NURSE
+aldebaran,135,119,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#alde	4_F_NURSE
+amatsu,194,113,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#ama	4_F_NURSE
+ayothaya,202,265,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#ayo	4_F_NURSE
+comodo,196,143,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#com	4_F_NURSE
+einbech,195,132,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#einbe	4_F_NURSE
+einbroch,227,191,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#einbr	4_F_NURSE
+geffen,115,64,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#gef	4_F_NURSE
+gonryun,156,122,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#gon	4_F_NURSE
+hugel,91,148,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#hug	4_F_NURSE
+izlude,126,115,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#izl	4_F_NURSE	//Pre-RE: (125,118)
+jawaii,200,292,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#jaw	4_F_NURSE
+lighthalzen,156,98,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#lhz	4_F_NURSE
+louyang,213,104,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#lou	4_F_NURSE
+manuk,272,144,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#man	4_F_NURSE
+mid_camp,203,289,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#mid	4_F_NURSE
+moc_ruins,72,164,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#moc	4_F_NURSE
+morocc,155,100,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#mor	4_F_NURSE
+moscovia,220,191,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#mos	4_F_NURSE
+niflheim,188,190,5	duplicate(Yuwa The Healer)	Yuwa a Curandeira#nif	4_F_NURSE
+payon,179,106,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#pay	4_F_NURSE
+prontera,152,194,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#prt	4_F_NURSE
+rachel,125,116,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#rac	4_F_NURSE
+splendide,201,153,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#spl	4_F_NURSE
+thor_camp,249,74,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#thor	4_F_NURSE
+umbala,121,149,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#umb	4_F_NURSE
+veins,217,121,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#ve	4_F_NURSE
+ra_temsky,97,148,5	duplicate(Yuwa The Healer)	Yuwa a Curandeira#xmas	4_F_RUNAIN
+yuno,149,183,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#yuno	4_F_NURSE
+xmas,143,116,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#xmas1	4_F_NURSE
+
+// Duplicates (Renewal)
+//============================================================
+brasilis,194,221,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#bra	4_F_NURSE
+dewata,195,187,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#dew	4_F_NURSE
+dicastes01,201,194,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#dic	4_F_NURSE
+ecl_in01,45,60,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#ecl	4_F_NURSE
+malangdo,132,114,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#mal	4_F_NURSE
+malaya,227,204,6	duplicate(Yuwa The Healer)	Yuwa a Curandeira#ma	4_F_NURSE
+mora,55,152,4	duplicate(Yuwa The Healer)	Yuwa a Curandeira#mora	4_F_NURSE

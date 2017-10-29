@@ -1,0 +1,89 @@
+function	script	Asela	{
+
+	if (getgroupid() >= 1 ){
+		mes "[^FF0000Pingente de Asela^000000]";
+		mes "Você dejeja ser teleportado para a sala vip?";
+		switch(select("Sim, Asela!","Não.")){
+			
+			case 1:
+					warp("ra_temsky", 100,143);
+					getitem (32004,1);
+					break;
+					end;
+			case 2:
+					getitem (32004,1);
+					close;
+					break;
+					end;
+		}
+	}
+}
+function	script	getPremium	{
+	set .@ticks, getarg(0);
+	.@charidd = getcharid(3);
+	mes "Por favor, Digite o ^FF0000LOGIN^000000 da conta que deseja adicionar Privilégios VIP.";
+			.@ammouVip = 1;
+			input .@lAccount$;
+			query_sql ("SELECT `account_id` FROM `login` WHERE `userid`='"+.@lAccount$+"'",.@ExisAccount);
+			if ( .@ExisAccount == 0 )
+			{
+				next;
+				mes "Você não digitou um LOGIN válido.";
+				next;
+				mes "Por favor, tente novamente.";
+				getitem (32005, 1);
+				close;
+			}
+			next;
+			mes "Benefícios VIP foram ativados na sua conta por 1 dia.";
+			query_sql ("UPDATE `login` SET `group_id`='1',`dayVip`=`dayVip`+"+.@ammouVip+" WHERE `userid`='"+.@lAccount$+"'");
+			close;
+	if (.@ticks <= 0)
+	{
+		debugmes "getPremium - tried to set a timer in the past";
+		end;
+	}
+	set prmm, ((prmm > gettimetick(2)) ? prmm : gettimetick(2)) + .@ticks;
+	doevent "login::OnPCLoginEvent";
+	return;
+}
+
+-	script	login	-1,{
+OnPCLoginEvent:
+	if (prmm > gettimetick(2)) {
+		dispbottom "Seus benefícios VIP terminarão em " + callfunc("Time2Str",premium);
+		//atcommand "@adjgroup 1 "+strcharinfo(0);
+		.@groupid = 1;
+		.@aid = strcharinfo( PC_NAME );
+		.@aidid = getgroupid(strcharinfo( PC_NAME ));
+		deltimer strnpcinfo(3)+"::OnPCLoginEvent";
+		if ((prmm - gettimetick(2)) < 2147483)
+		{
+			addtimer (prmm - gettimetick(2)) *1000, strnpcinfo(3)+"::OnPCLoginEvent";
+		}
+		else
+		{
+			addtimer 2147483000, strnpcinfo(3)+"::OnPCLoginEvent";
+		}
+	} else if (prmm) {
+		atcommand "@adjgroup 0 "+strcharinfo(0);
+		set prmm, 0;
+		dispbottom "Seus benefícios VIP terminaram.";
+	}
+end;
+
+OnAtcommand:
+	query_sql ("SELECT `dayVip` FROM `login` WHERE `account_id` = '"+getcharid(3)+"'", .@ReSVIP);
+	if(getgroupid() < 1){
+	dispbottom "Você não possui privilégios VIP";
+	end;
+	}	
+	else{
+	dispbottom "Seus benefícios VIP terminarão em "+.@ReSVIP+" Dias!";
+	end;
+}
+OnInit:
+	bindatcmd "Viptime",strnpcinfo(3)+"::OnAtcommand";
+	end; 
+
+}

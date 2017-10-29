@@ -1,0 +1,63 @@
+//===== Hercules Script ======================================
+//= Stylist
+//===== By: ==================================================
+//= Euphy
+//===== Current Version: =====================================
+//= 1.1
+//===== Description: =========================================
+//= Changes your hair style, hair color, and cloth color.
+//===== Additional Comments: =================================
+//= 1.1 Switched to 'getbattleflag', credits to Saithis. [Euphy]
+//============================================================
+
+prontera,168,203,3	script	Newz o estilista#RMStyle	4_M_NEWOZ,{
+
+	cutin "nines02",2;
+	mes "[^DC143C Newz, o Estilista^000000]";
+	mes "Olá, aventureiro.";
+	mes "Provavelmente você não me conhece então irei me apresentar.";
+	next;
+	mes "[^DC143C Newz, o Estilista^000000]";
+
+	mes "Eu sou o Newz, aquele que vai te deixar com um visual 'new'.";
+	mes "hahahahaha~";
+	next;
+	mes "[^DC143C Newz, o Estilista^000000]";
+	mes "Ok, foi sem graça.";
+	mes "Você deseja mudar o seu visual?";
+	next;
+	switch( select("Sim","Não")){
+	
+		case 1:
+			mes "[^DC143C Newz, o Estilista^000000]";
+			mes "Por enquanto estamos com visuais limitados.";
+			mes "Mas fique atento que em breve terei estilos únicos disponíveis.";
+
+	setarray .@styles[1],getbattleflag("max_cloth_color"),getbattleflag("max_hair_style"),getbattleflag("max_hair_color");
+	setarray .@Look[1],7,1,6;
+	set .@s, select("^2E8B57Cor de Roupa^000000","^4682B4Estilo de Cabelo", "^BC8F8FCor de Cabelo^000000");
+	set .@Revert, getlook(.@Look[.@s]);
+	set .@style,1;
+	while(1) {
+		setlook .@Look[.@s], .@style;
+		message strcharinfo(PC_NAME),"Estilo#"+.@style+".";
+		set .@menu$, " Próximo (^0055FF"+((.@style!=.@styles[.@s])?.@style+1:1)+"^000000): Anterior(^0055FF"+((.@style!=1)?.@style-1:.@styles[.@s])+"^000000): Ir para...: Reverter para original (^0055FF"+.@Revert+"^000000)";
+		switch(select(.@menu$)) {
+			case 1: set .@style, ((.@style!=.@styles[.@s])?.@style+1:1); break;
+			case 2: set .@style, ((.@style!=1)?.@style-1:.@styles[.@s]); break;
+			case 3: message strcharinfo(PC_NAME),"Choose a style between 1 - "+.@styles[.@s]+".";
+				input .@style,0,.@styles[.@s];
+				if (!.@style) set .@style, rand(1,.@styles[.@s]);
+				break;
+			case 4: set .@style, .@Revert; setlook .@Look[.@s], .@Revert; break;
+		}
+	}
+	
+	case 2: 	
+			mes "[^DC143C Newz, o Estilista^000000]";
+			mes "Eu estarei por aqui caso mude de idéia.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}}

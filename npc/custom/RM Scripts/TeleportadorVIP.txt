@@ -1,0 +1,193 @@
+ra_temsky,106,147,3	script	Teleportador	4_M_ROTERT,{
+
+	mes "^20B2AA[Ranz o Teleportador]^000000";
+ 	mes "Olá! Obrigado por utilizar os nossos serviços VIP.";
+	mes "Pra onde deseja ser teleportado?";
+	next;
+	switch(select("Cidades","Campos","Cavernas","Área de Comércio","Cancelar")){
+	
+		case 1: 
+				mes "^20B2AA[Ranz o Teleportador]^000000";
+				mes "Por favor, escolha seu destino:";
+				next;
+				switch(select("Prontera","Alberta","Aldebaran","Amatsu","Ayothaya","Comodo","Einbroch","Geffen","Gonryun","Hugel","Izlude","Jawaii","Lighthalzen","Louyang","Lutie","Morocc","Niflheim","Payon","Umbala","Yuno")){
+				
+					case 1:
+						 warp("prontera", 156, 191);	
+						close;
+						break;
+					case 2:
+						warp("alberta", 31, 234);
+						close;
+						break;
+					case 3:
+						warp("aldebaran", 140, 107);
+						close;
+						break;
+					case 4:
+						warp("amatsu", 198, 98);
+						close;
+						break;
+					case 5:
+						warp("ayothaya", 207, 259);
+						close;
+						break;
+					case 6:
+						warp("comodo", 200, 139);
+						close;
+						break;
+					case 7:
+						warp("einbroch", 231, 184);
+						close;
+						break;
+					case 8:
+						warp("geffen", 119, 59);	
+						close;
+						break;
+					case 9:
+						warp("gonryun", 160, 107);	
+						close;
+						break;
+					case 10:
+						warp("hugel", 95, 140);	
+						close;
+						break;
+					case 11:
+						warp("izlude", 128, 101);	
+						close;
+						break;
+					case 12:
+						warp("jawaii", 203, 283);	
+						close;
+						break;
+					case 13:
+						warp("lighthalzen", 158, 86);	
+						close;
+						break;
+					case 14:
+						warp("louyang", 217, 93);	
+						close;
+						break;
+					case 15:
+						warp("xmas", 148, 108);	
+						close;
+						break;
+					case 16:
+						warp("morocc", 156, 93);	
+						close;
+						break;
+					case 17:
+						warp("nif_in", 68, 14);	
+						close;
+						break;
+					case 18:
+						warp("payon", 158, 88);	
+						close;
+						break;
+					case 19:
+						warp("umbala", 123, 135);	
+						close;
+						break;
+					case 20:
+						warp("yuno", 158, 175);	
+						close;
+						break;
+				}
+				close;
+				break;
+		case 2: 
+				switch(select("Campos de Amatsu","Campos de Ayothaya","Campos de Louyang")){
+				
+					case 1:
+						warp("amatsu", 248, 280);	
+						close;
+						break;
+					case 2:
+						warp("ayothaya", 271, 176);	
+						close;
+						break;
+					case 3:
+						warp("louyang", 217, 40);	
+						close;
+						break;
+		}			
+		case 3: 
+				switch(select("Caverna de Geffen.","Caverna de Payon.","Entrada de Glash Heim.","Esfinge.","Esgoto de Prontera.","Fábrica de Robôs de Kiel.","Ilha da Tartaruga.","Ilha de Byalan.","Labirinto da Floresta.","Laboratório de Somatologia.","Lago do Abismo.","Mina Abandonada de Mjolnir.","Navio Fantasma.","Pirâmides.","Templo de Odin.","Torre de Thanatos.")){
+				
+				case 1:
+						warp("gef_tower", 153, 34);	
+						close;
+						break;
+				case 2:
+						warp("pay_arche", 53, 135);	
+						close;
+						break;
+				case 3:
+						warp("glast_01", 371, 304);	
+						close;
+						break;
+				case 4:
+						warp("moc_fild19", 107, 99);	
+						close;
+						break;
+				case 5:
+						warp("prt_fild05", 284, 227);	
+						close;
+						break;
+				case 6:
+						warp("yuno_fild08", 80, 181);	
+						close;
+						break;
+				case 7:
+						warp("tur_dun01", 162, 33);	
+						close;
+						break;
+				case 8:
+						warp("izlu2dun", 108, 30);	
+						close;
+						break;
+				case 9:
+						warp("prt_fild01", 136, 367);	
+						close;
+						break;
+				case 10:
+						warp("lighthalzen", 307, 304);	
+						close;
+						break;
+				case 11:
+						warp("hu_fild05", 166, 311);	
+						close;
+						break;
+				case 12:
+						warp("mjolnir_02", 79, 357);	
+						close;
+						break;
+				case 13:
+						warp("alb2trea", 47, 56);	
+						close;
+						break;
+				case 14:
+						warp("moc_ruins", 70, 160);	
+						close;
+						break;
+				case 15:
+						warp("odin_tem01", 88, 146);	
+						close;
+						break;
+				case 16:
+						warp("hu_fild01", 140, 156);	
+						close;
+						break;
+		}
+		case 4: 
+				warp("vend_zone", 99, 92);	
+				close;
+				break;
+		case 5: 
+		
+				close;
+				break;
+	
+	
+	}
+}

@@ -1,0 +1,1880 @@
+prontera,159,194,3	script	Kafra Ragnaminions::kaf_RMprontera	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "prontera",156,185;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+morocc,163,100,3	script	Kafra Ragnaminions::kaf_RMmorroc	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "morocc",159,85;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+geffen,124,64,3	script	Kafra Ragnaminions::kaf_RMgeffen	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "geffen",120,74;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+payon,182,104,3	script	Kafra Ragnaminions::kaf_RMpayon	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "payon",155,87;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+alberta,32,240,3	script	Kafra Ragnaminions::kaf_RMalberta	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "alberta",50,245;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+izlude,130,115,4	script	Kafra Ragnaminions::kaf_RMizlude	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "izlude",94,105;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+aldebaran,144,119,3	script	Kafra Ragnaminions::kaf_RMaldeba	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "aldebaran",140,108;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+xmas,152,116,4	script	Kafra Ragnaminions::kaf_RMxmas	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "aldebaran",140,108;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+comodo,204,143,4	script	Kafra Ragnaminions::kaf_RMcomodo	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "comodo",200,132;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+yuno,152,187,6	script	Kafra Ragnaminions::kaf_RMyuno	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "yuno",157,175;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+amatsu,203,113,4	script	Kafra Ragnaminions::kaf_RMamatsu	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "amatsu",197,86;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+gonryun,162,122,4	script	Kafra Ragnaminions::kaf_RMgonryun	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "gonryun",158,102;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+umbala,129,149,4	script	Kafra Ragnaminions::kaf_RMumbala	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "umbala",122,134;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+louyang,226,100,4	script	Kafra Ragnaminions::kaf_RMlouyang	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "louyang",218,90;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+jawaii,207,292,4	script	Kafra Ragnaminions::kaf_RMjawaii	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "jawaii",203,283;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+ayothaya,213,265,4	script	Kafra Ragnaminions::kaf_RMayothaya	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "jawaii",203,283;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+einbroch,225,188,6	script	Kafra Ragnaminions::kaf_RMeinbroch	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "einbroch",232,174;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+lighthalzen,161,98,4	script	Kafra Ragnaminions::kaf_RMlighthalzen	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "lighthalzen",159,81;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+einbech,201,132,4	script	Kafra Ragnaminions::kaf_RMeinbech	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "einbech",195,131;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+hugel,97,148,4	script	Kafra Ragnaminions::kaf_RMhugel	4_F_KAFRA8,{
+
+	cutin "kafra_08",2;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Seja muito bem vindo ao Ragnaminions!!";
+	mes "Se você não for novato não tem problema,";
+	mes "bem vindo do mesmo jeito, afinal, é sempre bom sabe receber a sua visita.";
+	next;
+	mes "[^1E90FF Kafra Ragnaminions^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Salvar ponto de retorno","Utilizar armazém","Alugar um carrinho","Conferir notícias","Cancelar")){
+		
+		case 1:
+			savepoint "hugel",95,134;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Prontinho, salvei o seu ponto de retorno.";
+			mes "Assim você poderá me visitar sempre que usar uma asa de borboleta, ";
+			mes "ou ... *risos*";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		
+		case 2:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 4:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "A adminstração do Ragnaminions ainda está preparando";
+			mes "muitas novidades.";
+			mes "Fique atento(a) por aqui e também pelo Fórum do servidor.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 5: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}

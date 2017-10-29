@@ -1,0 +1,9 @@
+ra_temsky,143,143,4	script	Preti a Gata	4_F_PREMI,{
+
+	cutin("prm_1", 2);
+	mes "[^FF1493Premi a Gata^000000]";
+	mes "~Miaaau~~";
+	close2();
+	cutin("", 255);
+	end;
+}

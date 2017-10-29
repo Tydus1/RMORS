@@ -1,0 +1,85 @@
+//===== Hercules Script ======================================
+//= Reset NPC
+//===== By: ==================================================
+//= Hercules Dev Team
+//===== Current Version: =====================================
+//= 1.3
+//===== Description: =========================================
+//= Resets skills, stats, or both.
+//===== Additional Comments: =================================
+//= 1.0 First Version
+//= 1.1 Optimized for the greater good. [Kisuka]
+//= 1.2 Cleaning [Euphy]
+//= 1.3 All statuses removed upon skill reset. [Euphy]
+//============================================================
+
+prontera,139,226,5	script	Evy a Resetadora	4_JP_2015EVT,{
+
+	
+    set .@Reset, 1;			// Usos da resetadora
+	mes "[^FF1493Evy a Resetadora^000000]";
+	mes "Hmn? O que você quer?";
+	next;
+	switch(select("Quero resetar os meus atributos.","Cancelar.")){
+	
+			case 1: 
+				mes "[^FF1493Evy a Resetadora^000000]";
+				mes "Tsc, ok. Eu só irei resetar seus atributos e habilidades uma vez então pense bem antes se é isso mesmo que você deseja.";
+				next;
+				switch(select("Eu quero resetar!","Ok, irei pensar melhor.")){
+				
+					case 1:
+							if(.@Reset && Reset_limit >= .@Reset)
+									{
+										mes "[^FF1493Evy a Resetadora^000000]";
+										mes "Eu disse que só iria resetar seus atributos e habilidades uma única vez. Tsc...";
+										close;
+										break;
+										end;
+									}
+							else
+									{
+										mes "[^FF1493Evy a Resetadora^000000]";
+										mes "O custo para o meu reset é de 5 milhões de zeny e eu irei resetar ambos os atributos e as habilidades.";
+										next;
+										mes "[^FF1493Reset Girl^000000]";
+										mes "Vamos ver...";
+										next;
+										if (Zeny < 5000000)
+											{
+												mes "[^FF1493Evy a Resetadora^000000]";
+												mes "Você não possui 5 milhões de zeny";
+												close;
+												break;
+												end;
+											}
+										else
+											{
+												resetskill;
+												resetstatus;
+												set Zeny, Zeny 	- 5000000;
+												set Reset_limit,Reset_limit + 1;
+												mes "[^FF1493Evy a Resetadora^000000]";
+												mes "Pronto... agora use os pontos da maneira correta.";
+												close;
+												break;
+												end;
+											
+											}
+									}
+					case 2: 
+							mes "[^FF1493Evy a Resetadora^000000]";
+							mes "Okay...";
+							close;
+							break;
+							end;
+				}
+				
+			case 2:
+				mes "[^FF1493Evy a Resetadora^000000]";
+				mes "Não desperdisse meu tempo...";
+				close;
+				break;
+				end;
+		}
+}

@@ -1,0 +1,34 @@
+//===== Hercules Script ======================================
+//= Job Master
+//===== By: ==================================================
+//= Euphy
+//===== Current Version: =====================================
+//= 1.4
+//===== Description: =========================================
+//= A fully functional job changer.
+//===== Additional Comments: =================================
+//= 1.1 Fixed reset on Baby job change. [Euphy]
+//= 1.2 Added Expanded Super Novice support and initial Kagerou/Oboro support. [Euphy]
+//= 1.3 Kagerou/Oboro added. [Euphy]
+//= 1.4 Improved legibility (renamed variables, replaced
+//      numbers with constants; Changed syntax to match
+//      Hercules standards; Fixed status point exploit upon
+//      Baby Novice job change. [Haru]
+//============================================================
+// Official sprite 4_EP16_SKIA
+
+prontera,150,186,6	script	Liz a Mestra das Classes	4_F_KAFRA9,{
+
+	cutin("ep16_skia_nerius04",	2);
+	mes "[^800080Liz a mestra das classes^000000]";
+
+	if (Job_High_Priest || Job_High_Wizard ||  Job_Whitesmith || Job_Sniper || Job_Assassin_Cross || Job_Paladin || Job_Champion || Job_Professor || Job_Stalker || Job_Creator || Job_Clown || Job_Gypsy || Job_Soul_Linker || Job_Ninja || Job_Star_Gladiator || Job_Gunslinger || Job_SuperNovice) 
+		{
+		mes "Você alcançou o máximo de evolução da sua classe.";
+			close;
+		}
+
+	else { mes "Teste";}
+
+}
+

@@ -1,0 +1,40 @@
+-	script	Partybuff	FAKE_NPC,{
+
+	OnInit:
+			bindatcmd "partybuff", strnpcinfo(0)+"::Onaaa";
+			end;
+			
+	Onaaa:
+			
+			.@pid = getcharid(1);
+			if ( !.@pid ){
+								dispbottom "Crie um grupo para utilizar este comando";
+								end;
+						 }   
+				getpartymember .@pid, 1;
+				getpartymember .@pid, 2;
+				.@origin = getcharid(3);
+				for (.@i = 0;.@i < $@partymembercount; ++.@i )
+							{
+								if ( isloggedin( $@partymemberaid[.@i] , $@partymembercid[.@i] ) ) 
+										{
+											attachrid $@partymemberaid[.@i];
+											.@buff$ = "";
+											if (getstatus(SC_BLESSING))
+											.@buff$ += "B";
+											if (getstatus(SC_INC_AGI))
+											.@buff$ += "A";
+											if (getstatus(SC_PROTECTWEAPON) && getstatus(SC_PROTECTSHIELD) && getstatus(SC_PROTECTARMOR) && getstatus(SC_PROTECTHELM))
+											.@buff$ += "F";
+											if (getstatus(SC_SOULLINK))
+											.@buff$ += "S";
+											if (getstatus(SC_DEVOTION))
+											.@buff$ += "+";
+											.@display$[.@c++] = "["+ .@buff$ +"] "+ strcharinfo(0);
+										}
+							}
+				attachrid .@origin;
+				for ( .@i = 0; .@i < .@c; ++.@i )
+				dispbottom .@display$[.@i];
+				end;
+}

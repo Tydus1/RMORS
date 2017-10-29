@@ -18,15 +18,20 @@
 //= 2.8 Clustered conditionals replaced with switch to include all Upper types. [Euphy]
 //============================================================
 
-prontera,128,200,6	script	Platinum Skill NPC	4_F_MAID,{
-	mes "[Platinum Skill NPC]";
-	mes "I can give you the special skills available to your job.";
-	mes "Would you like these skills now?";
+prontera,131,217,6	script	Zan o instrutor	4_EP16_WOLF,{
+	cutin("16wol_nor", 2);
+	mes "[^009000Zan o Instrutor^000000]";
+	mes "Opa, outro aventureiro novo pelo Ragnaminions.";
+	mes "Eu sou o Zan. Eu e o meu irmão Dan estamos responsáveis por ensinar habilidades especiais e distribuir falcões e peco-pecos para os novos aventureiros.";
+	mes "Fale com ele se precisar também. Mas então, você deseja aprender as habilidades de platina da sua classe?";
 	next;
-	if (select("Yes Please", "No") == 2) {
-		mes "[Platinum Skill NPC]";
-		mes "Have a nice day... >.>";
-		close;
+	if (select("Sim, por favor.", "Não, vou tentar aprender sozinho.") == 2) {
+		mes "[^009000Zan o Instrutor^000000]";
+		mes "Tudo bem. Recompensas estão sendo distribuídas para os aventureiros que tentarem aprender as habilidades da forma tradicional.";
+		mes "Qualquer coisa, se mudar de ideia, volte a falar comigo.";
+		close2();
+		cutin("", 255);
+		end;
 	}
 	skill 142,1,0;
 	switch(BaseClass) {
@@ -55,7 +60,12 @@ prontera,128,200,6	script	Platinum Skill NPC	4_F_MAID,{
 		case 20: skill 1011,1,0; break;
 		default: break;
 	}
-	mes "[Platinum Skill NPC]";
-	mes "There you go!";
-	close;
+	mes "[^009000Zan o Instrutor^000000]";
+	mes "...  ,  ... ...  ,  .... .... ...!!";
+	progressbar("<1E90FF>", 3);
+	mes "Perfeito...Você aprendeu perfeitamente as habilidades. Por favor, confira-as na sua janela de habilidades, na sessão 'extra'";
+	close2();
+	cutin("", 255);
+	end;
+
 }

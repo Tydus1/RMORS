@@ -1,0 +1,534 @@
+ra_temsky,95,138,5	script	Porteiro VIP#script11	4_M_HUMAN_02,{
+
+if (getgroupid() >= 1 ){
+
+	mes "[^FF0000Porteiro VIP^000000]";
+	mes "Você deseja sair da sala VIP?";
+	next;
+	switch(select("Sim.","Não.")){
+		
+		case 1: 
+	mes "[^FF0000Porteiro VIP^000000]";
+		mes "Volte sempre para desfrutar dos nossos serviços";
+		next;
+		warp "prontera",156,191;
+		close;
+		break;
+		
+		case 2:
+	mes "[^FF0000Porteiro VIP^000000]";
+		mes "Ok. Fale comigo se precisar sair da sala VIP";
+		close;
+		break;
+		}
+	}
+		else{warp "prontera",156,191;}
+}
+ra_temsky,104,138,4	script	Porteiro VIP#script13	4_M_HUMAN_02,{
+
+if (getgroupid() >= 1 ){
+
+	mes "[^FF0000Porteiro VIP^000000]";
+	mes "Você deseja sair da sala VIP?";
+	next;
+	switch(select("Sim.","Não.")){
+		
+		case 1: 
+	mes "[^FF0000Porteiro VIP^000000]";
+		mes "Volte sempre para desfrutar dos nossos serviços";
+		next;
+		warp "prontera",156,191;
+		close;
+		break;
+		
+		case 2:
+	mes "[^FF0000Porteiro VIP^000000]";
+		mes "Ok. Fale comigo se precisar sair da sala VIP";
+		close;
+		break;
+		}
+	}
+		else{warp "prontera",156,191;}
+}
+
+
+prontera,165,171,4	script	Porteiro VIP#Porteiro11	4_M_HUMAN_02,{
+
+if (getgroupid() >= 1 ){
+
+	mes "[^FF0000Porteiro VIP^000000]";
+	mes "Você deseja ir para a sala vip?";
+	next;
+	switch(select("Sim.","Não.")){
+		
+		case 1: 
+	mes "[^FF0000Porteiro VIP^000000]";
+		mes "Por favor, Aguarde um segundo e já irei te teleportar pra nossa sala VIP.";
+		next;
+		progressbar("<1E90FF>", 1);
+		warp "ra_temsky",100,135;
+		close;
+		break;
+		
+		case 2:
+	mes "[^FF0000Porteiro VIP^000000]";
+		mes "Ok. Fale comigo se precisar ir à sala VIP.";
+		close;
+		break;
+		}
+	}
+		else{
+	mes "[^FF0000Porteiro VIP^000000]";
+	mes "Você não possui privilégios VIP";
+	mes "Contate a administração ou nossos serviços de VIP através do site: ^0000FFwww.ragnaminions.com.br^000000";
+	close;
+}
+}
+ra_temsky,50,151,4	script	Anunciador	4_EP16_MARK,{
+
+	mes "[^207540Anunciador^000000]";
+	mes "Olá, Você gostaria de anunciar algo para todo o servidor RagnaMinions?";
+	next;
+	switch(select("Sim, Quero anunciar algo.","Não, estou só de passagem.")){
+		
+		case 1: 
+				mes "[^207540Anunciador^000000]";
+				mes "O preço do anuncio é um ticket de evento.";
+				mes "Caso você não saiba como consegui-los, participe dos eventos automáticos que ocorrem no servidor";
+				mes " e caso vença algum deles, você conseguirá os tickets.";
+				next;
+				mes "[^207540Anunciador^000000]";
+				mes "Deixe me ver se você possui algum ticket de evento...";
+				next;
+				progressbar("<1E90FF>", 1);
+				if (countitem(32006) >= 1){
+				mes "[^207540Anunciador^000000]";
+				mes "Por favor, digite o seu anúncio.";
+				input @anuncio$;
+				delitem (32006,1);
+				announce( strcharinfo( PC_NAME ) + ": " + @anuncio$ ,bc_all, 0xFF0000 );
+				close2();
+				break;
+				end;				
+				}
+				else {
+						mes "[^207540Anunciador^000000]";
+						mes "Você não possui um ticket de evento.";
+						close;
+						break;
+						end;
+				}
+				
+		case 2:
+				mes "[^207540Anunciador^000000]";
+				mes "Certo. Fale comigo se precisar anunciar algo.";
+				close;
+				break;
+				end;	
+	}
+}
+ra_temsky,36,143,6	script	Kafra Lisa	4_F_KAFRA7,{
+
+		cutin ("kafra_07", 2);
+		mes "[^704050Kafra Lisa^000000]";
+		mes "Olá, Eu sou a kafra responsável pela distribuição de cartões kafras para os jogadores vip do servidor.";
+		next;
+		mes "[^704050Kafra Lisa^000000]";
+		mes "Lembrando que ^FF0000NÃO^000000 é possível retirar cartões kafra tendo mais do que 3 cartões em mãos.";
+		next;
+		switch(select("Retirar cartões kafras.","Cancelar.")){
+		
+			case 1:
+				if (getgroupid() >= 1 ){
+				if (countitem(12211) == 0) { getitem (12211,3); close2() ; cutin ("",255); break; end;}
+				if (countitem(12211) == 1) { getitem (12211,2); close ; cutin ("",255); break; end;}
+				if (countitem(12211) == 2) { getitem (12211,1); close ; cutin ("",255); break; end;}
+				if (countitem(12211) >= 3) { 
+				mes "[^704050Kafra Lisa^000000]";
+				mes "Você já possui 3 cartões kafras.";
+				close2();
+				cutin ("",255);
+				break; 
+				end;
+				}
+				}
+				else {
+				mes "[^704050Kafra Lisa^000000]";
+				mes "Eu sou posso distribuir cartões kafras para jogadores VIPS!";
+				close2();
+				cutin ("",255);
+				end;
+				}
+					
+			case 2:	
+				close2();
+				cutin ("",255);
+				break;
+				end;
+		}
+		}
+ra_temsky,56,148,4	script	Refinador	4_M_RUSBALD,{
+	callfunc "refinemain","Hollgrehenn",0;
+	end;
+}
+ra_temsky,39,148,5	script	Nana a Purificadora	4_F_FRUIT,{
+	cutin("ep15_2_fru_2", 2);
+	mes "[^009000Nana a Purificadora de Minérios^000000]";
+	mes "Olá, Eu posso purificar seus minérios de Oridecon e Elunium.";
+	next;
+	mes "[^009000Nana a Purificadora de Minérios^000000]";
+	mes "Você gostaria de utilizar meus serviços?";
+	next;
+	switch(select("Purificar Minérios de Oridecon.","Purificar Minérios de Elunium.","Não quero utilizar seus serviços.")){
+	
+		case 1:
+			mes "[^009000Nana a Purificadora de Minérios^000000]";
+			mes "Eu posso purificar até 100 minérios de uma só vez, ";
+			mes "mas preciso que você tenha as quantidades corretas no seu inventário.";
+			mes "Vamos lá...";
+			next;
+				if (countitem(Oridecon_Stone) == 5) {
+					delitem 756,5;
+					getitem Oridecon,1; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 10) {
+					delitem 756,10;
+					getitem Oridecon,2; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 15) {
+					delitem 756,15;
+					getitem Oridecon,3; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 20) {
+					delitem 756,20;
+					getitem Oridecon,4; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 25) {
+					delitem 756,25;
+					getitem Oridecon,5; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 30) {
+					delitem 756,30;
+					getitem Oridecon,6; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 35) {
+					delitem 756,35;
+					getitem Oridecon,7; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 40) {
+					delitem 756,40;
+					getitem Oridecon,8; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 45) {
+					delitem 756,45;
+					getitem Oridecon,9; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Oridecon_Stone) == 50) {
+					delitem 756,50;
+					getitem Oridecon,10; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 55) {
+					delitem 756,55;
+					getitem Oridecon,11; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 60) {
+					delitem 756,60;
+					getitem Oridecon,12; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 65) {
+					delitem 756,65;
+					getitem Oridecon,13; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 70) {
+					delitem 756,70;
+					getitem Oridecon,14; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 75) {
+					delitem 756,75;
+					getitem Oridecon,15; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 80) {
+					delitem 756,80;
+					getitem Oridecon,16; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 85) {
+					delitem 756,85;
+					getitem Oridecon,17; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 90) {
+					delitem 756,90;
+					getitem Oridecon,18; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 95) {
+					delitem 756,95;
+					getitem Oridecon,19; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) == 100) {
+					delitem 756,100;
+					getitem Oridecon,20; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Oridecon_Stone) < 4) {
+				mes "[^009000Nana a Purificadora de Minérios^000000]";
+				mes "Você precisa ter pelo menos 5 minérios de oridecon no inventário.";
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else 
+				mes "[^009000Nana a Purificadora de Minérios^000000]";
+				mes "Por favor, deixe somente múltiplos de 5 da quantidade de minérios que você possui no inventário,";
+				mes " com um número máximo de 100, para que eu possa purifica-los de uma só vez.";
+				close2();
+				cutin("", 255);
+				break;
+				
+		case 2:
+				mes "[^009000Nana a Purificadora de Minérios^000000]";
+			mes "Eu posso purificar até 100 minérios de uma só vez, ";
+			mes "mas preciso que você tenha as quantidades corretas no seu inventário.";
+			mes "Vamos lá...";
+			next;
+				if (countitem(Elunium_Stone) == 5) {
+					delitem 757,5;
+					getitem Elunium,1; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 10) {
+					delitem 757,10;
+					getitem Elunium,2; // Oridecon
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 15) {
+					delitem 757,15;
+					getitem Elunium,3; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 20) {
+					delitem 757,20;
+					getitem Elunium,4; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 25) {
+					delitem 757,25;
+					getitem Elunium,5; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 30) {
+					delitem 757,30;
+					getitem Elunium,6; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 35) {
+					delitem 757,35;
+					getitem Elunium,7; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 40) {
+					delitem 757,40;
+					getitem Elunium,8; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 45) {
+					delitem 757,45;
+					getitem Elunium,9; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+					}
+				else if (countitem(Elunium_Stone) == 50) {
+					delitem 757,50;
+					getitem Elunium,10; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 55) {
+					delitem 757,55;
+					getitem Elunium,11; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 60) {
+					delitem 757,60;
+					getitem Elunium,12; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 65) {
+					delitem 757,65;
+					getitem Elunium,13; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 70) {
+					delitem 757,70;
+					getitem Elunium,14; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 75) {
+					delitem 757,75;
+					getitem Elunium,15; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 80) {
+					delitem 757,80;
+					getitem Elunium,16; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 85) {
+					delitem 757,85;
+					getitem Elunium,17; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 90) {
+					delitem 757,90;
+					getitem Elunium,18; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 95) {
+					delitem 757,95;
+					getitem Elunium,19; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) == 100) {
+					delitem 757,100;
+					getitem Elunium,20; // Elunium
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else if (countitem(Elunium_Stone) < 4) {
+				mes "[^009000Nana a Purificadora de Minérios^000000]";
+				mes "Você precisa ter pelo menos 5 minérios de Elunium no inventário.";
+					close2();
+					cutin("", 255);
+					break;
+				}
+				else 
+				mes "[^009000Nana a Purificadora de Minérios^000000]";
+				mes "Por favor, deixe somente múltiplos de 5 da quantidade de minérios que você possui no inventário,";
+				mes " com um número máximo de 100, para que eu possa purifica-los de uma só vez.";
+				close2();
+				cutin("", 255);
+				break;
+	
+		case 3:
+				mes "[^009000Nana a Purificadora de Minérios^000000]";
+				mes "Ok. Fale comigo quando precisar pufiricar seus minérios.";
+				close2();
+				cutin("", 255);
+				break;				
+				
+	}
+}
+vend_zone,106,102,4	script	Saída	4_M_RUSKNIGHT,{
+
+	mes "[Guarda]";
+	mes "Você deseja sair da sala de comércio?";
+	switch(select("Sim.","Não.")){
+		
+		case 1:
+				warp("prontera",155,187);
+				break;
+				end;
+				
+		case 2: close;
+				break;
+				end;
+	}
+
+}
+
+ra_temsky,93,147,6	shop	Utilidades Ragnaminions::UtilidadesRM2	2_VENDING_MACHINE1,611:-1,578:750,501:-1,502:-1,503:-1,504:-1,506:-1,645:-1,656:-1,657:-1,601:-1,602:-1,1750:-1,1751:-1,1752:-1,1065:-1,610:-1,717:-1 
+

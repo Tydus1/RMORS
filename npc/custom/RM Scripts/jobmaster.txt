@@ -15,23 +15,29 @@
 //      Hercules standards; Fixed status point exploit upon
 //      Baby Novice job change. [Haru]
 //============================================================
-
-prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
+// Official sprite 4_EP16_SKIA
+prontera,149,195,5	script	Liz a Mestra das Classes	4_EP16_SKIA,{
 	function Job_Menu; function A_An;
-
-	mes "[Job Master]";
+	cutin("ep16_skia_nerius04", 2);
+	mes "[^800080Liz a mestra das classes^000000]";
 	if (Class > Job_Soul_Linker) {
-		mes "No more jobs are available.";
+		mes "Você já alcançou o máximo de evoluções da sua classe.";
 		close;
 	}
 	if (checkfalcon() || checkcart() || checkmount() || hascashmount()) {
-		mes "Please remove your "+((checkfalcon())?"falcon":"")+((checkcart())?"cart":"")+((checkmount() || hascashmount())?"mount":"")
-		    +" before proceeding.";
-		close;
+		mes "Por favor, remova "+((checkfalcon())?"seu falcão":"")+((checkcart())?"seu carrinho":"")+((checkmount() || hascashmount())?"sua montaria":"")
+		    +" antes de prosseguir.";
+		close2();
+		cutin("", 255);
+		end;
+		
 	}
 	if (.skill_point_check && SkillPoint > 0) {
-		mes "Please use all your skill points before proceeding.";
-		close;
+		mes "Por favor, use todos os seus pontos de habilidade antes de prosseguir.";
+		close2();
+		cutin("", 255);
+		end;
+
 	}
 
 	.@eac = eaclass();
@@ -53,19 +59,18 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 			close;
 		}
 		while (true) {
-			mes "Select an option.";
+			mes "Ei, você finalmente alcançou o nível 99.";
+			mes "Quer renascer e continuar a busca por mais poder agora?";
 			next;
-			.@choice = select(" ~ ^0055FFRebirth^000000", (.third_classes ? " ~ ^FF0000Third Class^000000":""), " ~ ^777777Cancel^000000");
+			.@choice = select("^0055FFRenascer^000000", (.third_classes ? " ~ ^FF0000Third Class^000000":""), "^777777Cancelar^000000");
 			if (.@choice == 3)
 				close;
-			mes "[Job Master]";
-			mes "Are you sure?";
+			mes "[^800080Liz a mestra das classes^000000]";
+			mes "Você tem certeza?";
 			next;
 			if (.@choice == 1)
 				Job_Menu(Job_Novice_High);
-			else
-				Job_Menu(roclass(.@eac|EAJL_THIRD));
-			mes "[Job Master]";
+							
 		}
 	}
 	.@job1 = roclass(.@eac|EAJL_2_1);
@@ -85,21 +90,24 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 			    + "to continue.";
 			close;
 		}
-		mes "Switch to "+jobname(.@newclass)+"?";
+		mes "Transformar em "+jobname(.@newclass)+"?";
 		next;
 		Job_Menu(.@newclass);
 		close;
 	}
 	if (.@eac&EAJL_2)
 		if (.@eac&(EAJL_UPPER|EAJL_BABY) || roclass(.@eac|EAJL_UPPER) == -1) {
-			mes "No more jobs are available.";
-			close;
+			mes "Você alcançou o máximo de evolução da sua classe.";
+			close2();
+			cutin("", 255);
+			end;
 		}
 	if ((.@eac&EAJ_BASEMASK) == EAJ_NOVICE) {
 		if (JobLevel < .jobchange_first) {
-			mes "A job level of "+.jobchange_first+" is required to change into the 1st Class.";
+			mes "Você precisa de "+.jobchange_first+" níveis para trocar para a primeira classe.";
 		} else if (Class == Job_Novice_High && .linear_jobchange && lastJob) {
-			mes "Switch classes now?";
+			mes "Quer trocar de classe agora??";
+			cutin("", 255);
 			next;
 			Job_Menu(roclass((eaclass(lastJob)&EAJ_BASEMASK)|EAJL_UPPER));
 		} else if (Class == Job_Novice) {
@@ -116,43 +124,56 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 		close;
 	}
 	if (roclass(.@eac|EAJL_2_1) == -1 || roclass(.@eac|EAJL_2_2) == -1) {
-		mes "No more jobs are available.";
+		mes "Você alcançou o máximo de potêncial de evolução da sua classe.";
 	} else if (!(.@eac&EAJL_2) && JobLevel < .jobchange_second) {
-		mes "A job level of "+.jobchange_second+" is required to change into the 2nd Class.";
+		mes "Você precisa de "+.jobchange_second+" níveis para mudar para a segunda classe.";
 	} else if (.linear_jobchange && lastJob && (.@eac&EAJL_UPPER)) {
-		mes "Switch classes now?";
+		mes "Quer trocar de classe agora?";
 		next;
 		Job_Menu(lastJob+Job_Novice_High);
 	} else {
 		Job_Menu(.@job1, .@job2);
 	}
-	close;
+	close2();
+	cutin("", 255);
+	end;
 
 function Job_Menu {
 	while (true) {
 		if (getargcount() > 1) {
-			mes "Select a job.";
+			mes "Olá, eu sou a Liz.";
+			mes "Eu sou responsável pela mudança de classe dos novos exploradores do RagnaMinions.";
+			mes "Antes de continuarmos, deixa eu te avisar sobre algo:";
+			next;
+			mes "[^800080Liz a mestra das classes^000000]";
+			mes "Estou sabendo que os instrutores estão dando ^0000FF Equipamentos únicos^000000 para os aventureiros que mudarem de classe da forma tradicional.";
+			mes "Mas enfim, se preferir fazer a mudança por aqui não tem problema.";
+			next;
+			mes "[^800080Liz a mestra das classes^000000]";
+			mes "Por favor, Escolha qual classe você deseja se tornar.";
 			.@menu$ = "";
 			for (.@i = 0; .@i < getargcount(); ++.@i)
-				.@menu$ += " ~ "+jobname(getarg(.@i))+":";
-			.@menu$ += " ~ ^777777Cancel^000000";
+				.@menu$ += ""+jobname(getarg(.@i))+":";
+			.@menu$ += "^777777Cancelar^000000";
 			next;
 			.@newjob = getarg(select(.@menu$)-1, 0);
 			if (!.@newjob) close;
 			if ((.@newjob == Job_SuperNovice || .@newjob == Job_Super_Baby) && BaseLevel < .supernovice_level) {
-				mes "[Job Master]";
-				mes "A base level of "+.supernovice_level+" is required to turn into a "+jobname(.@newjob)+".";
-				close;
+				mes "[^800080Liz a mestra das classes^000000]";
+				mes "É necessário ter lével "+.supernovice_level+" para se tornar um "+jobname(.@newjob)+".";
+				close2();
+				cutin("", 255);
+				end;
 			}
-			mes "[Job Master]";
-			mes "Are you sure?";
+			mes "[^800080Liz a mestra das classes^000000]";
+			mes "Você tem certeza?";
 			next;
 		} else {
 			.@newjob = getarg(0);
 		}
-		if (select(" ~ Change into ^0055FF"+ jobname(.@newjob) +"^000000 class", " ~ ^777777"+(getargcount() > 1 ? "Go back": "Cancel")+"^000000") == 1) {
-			mes "[Job Master]";
-			mes "You are now "+A_An(jobname(.@newjob))+"!";
+		if (select("Transformar em ^0055FF"+ jobname(.@newjob) +"^000000", "^777777"+(getargcount() > 1 ? "Voltar": "Cancelar")+"^000000") == 1) {
+			mes "[^800080Liz a mestra das classes^000000]";
+			mes "Agora você é um"+A_An(jobname(.@newjob))+"!";
 			if (.@newjob == Job_Novice_High && .linear_jobchange)
 				lastJob = Class; // Note: This is incompatible with the Valkyrie rebirth script.
 			jobchange .@newjob;
@@ -163,14 +184,16 @@ function Job_Menu {
 				SkillPoint = 0;
 			}
 			specialeffect(EF_ANGEL2, AREA, playerattached());
-			specialeffect(EF_ELECTRIC, AREA, playerattached());
+			
 			if (.platinum)
 				callsub Get_Platinum;
-			close;
+			close2();
+			cutin("", 255);
+			end;
 		}
 		if (getargcount() == 1)
 			return;
-		mes "[Job Master]";
+		mes "[^800080Liz a mestra das classes^000000]";
 	}
 	end;
 }
@@ -253,7 +276,7 @@ OnInit:
 	.rebirth_jlevel = 50;    // Minimum base job level to reborn OR change to third class
 	.jobchange_first = 10;   // Minimum job level to turn into 1st class
 	.jobchange_second = 40;  // Minimum job level to turn into 2nd class
-	.third_classes = 1;      // Enable third classes/Extended Classes? (1: yes / 0: no)
+	.third_classes = 0;      // Enable third classes/Extended Classes? (1: yes / 0: no)
 	.supernovice_level = 45; // Minimum base level to turn into Super Novice
 	.linear_jobchange = 1;   // Enforce linear class changes? (1: yes / 0: no)
 	.skill_point_check = 1;  // Force player to use up all skill points? (1: yes / 0: no)

@@ -1,0 +1,197 @@
+//===== 3CeAM Script =========================================
+//= 3CeAM Custom Stylist NPC
+//===== By: ==================================================
+//= Rytech
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= 3CeAM r791+
+//===== Description: =========================================
+//= A new generation stylist that offers enhanced style
+//= options and dressing room for character dye/style preview.
+//= Stylist also detects the server's max dyes/styles settings
+//= and also auto adjusts maxes between jobs as needed.
+//===== Additional Comments: =================================
+//= 1.0 First release. [Rytech]
+//============================================================
+prontera,171,203,3	script	Luke The Tailor	509,{
+
+// Adding condition to only transclass's use the npc
+	if(Class >= 4008 && Class <= 4021){
+Lintro:
+	mes "[Luke The Tailor]";
+	mes "Hi there, Midgardian. I'm a Luke The Tailor.";
+	mes "I can customize your Clothes appearance in a full hand of ways.";
+	mes "Do you want to try out my services?";
+	next;
+	menu "Sure.",Laccessroom,"No Thanks.",Lbye;
+
+Laccessroom:
+	// Open the dressing room and sets the dye/style max's depending on the job.
+//	opendressroom(0);
+	set @hairdyemax,253;
+	set @bodydyemax,0;
+
+	// Summoner's only have 6 hair styles.
+	if (BaseClass != Job_Summoner)
+		set @hairstylemax,29;
+	else
+		set @hairstylemax,29;
+
+	// Only 3rd job's have access to a 2nd body style.
+	// Note: Not all of the new body styles are out. Best to limit only to jobs that do have them.
+	if (
+//	BaseThird == Job_Lord_Knight || 
+	BaseThird == Job_High_Wizard || 
+	BaseThird == Job_Sniper || 
+	BaseThird == Job_High_Priest || 
+	BaseThird == Job_Whitesmith || 
+	BaseThird == Job_Assassin_Cross || 
+	BaseThird == Job_Paladin || 
+	BaseThird == Job_Professor || 
+	BaseThird == Job_Clown || 
+	BaseThird == Job_Gypsy || 
+//	BaseThird == Job_Sura || 
+	BaseThird == Job_Creator || 
+	BaseThird == Job_Stalker
+	)
+		set @bodystylemax,MaxBodyStyle;
+	else
+		set @bodystylemax,3;
+
+Lmain:
+	mes "[Luke The Tailor]";
+	mes "Ok step this way.";
+	mes "I can set your clothes appearance so you can look younger or even more experienced.";
+	next;
+//	menu "All Dyes And Styles",Lalldyestyle,"Hair Dye Only",Lhairdye,"Hair Style Only",Lhairstyle,"Body Dye Only",Lbodydye,"Body Style Only",Lbodystyle,"Im done.",Lbye;
+	menu "Body Style",Lbodystyle,"I'm done.",Lbye;
+Lalldyestyle:
+	mes "[Luke The Tailor]";
+	mes "Enter the dyes/styles you want in the 4 input boxes in order....";
+	mes "Max Hair Dyes = "+@hairdyemax+"";
+	mes "Max Hair Styles = "+@hairstylemax+"";
+	mes "Max Body Dyes = "+@bodydyemax+"";
+	mes "Max Body Styles = "+@bodystylemax+"";
+	input @hairdye;
+	if (@hairdye < 0 || @hairdye > @hairdyemax) set @hairdye,0;
+	input @hairstyle;
+	if (@hairstyle < 0 || @hairstyle > @hairstylemax) set @hairstyle,0;
+	input @bodydye;
+	if (@bodydye < 0 || @bodydye > @bodydyemax) set @bodydye,0;
+	input @bodystyle;
+	if (@bodystyle < 0 || @bodystyle > @bodystylemax) set @bodystyle,0;
+	setlook 6,@hairdye;
+	setlook 1,@hairstyle;
+	setlook 7,@bodydye;
+	setlook 13,@bodystyle;
+	next;
+	goto Lmain;
+
+Lhairdye:
+	mes "[Luke The Tailor]";
+	mes "Enter the dye you want.";
+	mes "Max Hair Dyes = "+@hairdyemax+"";
+	input @hairdye;
+	if (@hairdye < 0 || @hairdye > @hairdyemax) set @hairdye,0;
+	setlook 6,@hairdye;
+	next;
+	goto Lmain;
+
+Lhairstyle:
+	mes "[Luke The Tailor]";
+	mes "Enter the style you want.";
+	mes "Max Hair Styles = "+@hairstylemax+"";
+	input @hairstyle;
+	if (@hairstyle < 0 || @hairstyle > @hairstylemax) set @hairstyle,0;
+	setlook 1,@hairstyle;
+	next;
+	goto Lmain;
+
+Lbodydye:
+	mes "[Luke The Tailor]";
+	mes "Enter the dye you want.";
+	mes "Max Body Dyes = "+@bodydyemax+"";
+	input @bodydye;
+	if (@bodydye < 0 || @bodydye > @bodydyemax) set @bodydye,0;
+	setlook 7,@bodydye;
+	next;
+	goto Lmain;
+
+Lbodystyle:
+	mes "[Luke The Tailor]";
+	mes "Enter the Body style you want.";
+	mes "0: Default Body style of your job.";
+	mes "1: 3rd job Body Style.";
+	mes "2: 3rd updated Body Style.";
+	mes "3: Pre-trans Body Style.";
+	mes "Maximum Body style value = "+@bodystylemax+"";
+	input @bodystyle;
+	if (@bodystyle < 0 || @bodystyle > @bodystylemax) set @bodystyle,0;
+	setlook 13,@bodystyle;
+	next;
+	goto Lmain;
+
+Lbye:
+	mes "[Luke The Tailor]";
+	mes "Ok then. Ill be here whenever you need to change your look.";
+	close;
+}  if (Class >= 24 && Class <= 25){
+	mes "[Luke The Tailor]";
+	mes "Hi there, Midgardian. I'm a Luke The Tailor.";
+	mes "I can customize your Clothes appearance in a full hand of ways.";
+	mes "Do you want to try out my services?";
+	next;
+	switch( select("Sim.","Não.")){
+	
+	case 1:
+			mes "[Luke The Tailor]";
+			mes "Ok step this way.";
+			mes "I can set your clothes appearance so you can look younger or even more experienced.";
+			next;
+			switch( select("Body Style","I'm done.")){
+				case 1: 
+					mes "[Luke The Tailor]";
+					mes "Enter the Body style you want.";
+					mes "0: Default Body style of your job.";
+					mes "1: Kagerou/oboro sprites for ninja.";
+					mes "2: Rebellion sprites for gunslinger.";
+					mes "Maximum Body style value: 1";
+					input @bodystyle;
+					if (@bodystyle < 0 || @bodystyle > 1) {set @bodystyle,0;}
+					setlook 13,@bodystyle;
+					next;
+					
+				case 2:
+					mes "[Luke The Tailor]";
+					mes "Ok then. Ill be here whenever you need to change your look.";
+					close;
+					break;
+			}
+	case 2: 
+				mes "[Luke The Tailor]";
+				mes "Ok then. Ill be here whenever you need to change your look.";
+				close;
+				break;
+			
+} }else
+{
+	mes "[Luke The Tailor]";
+	mes "Only Transclass's can use my services. Keep training so you will be able to use it soon";
+	close;
+}
+//Lwhoareyou:
+//	mes "[Luke The Tailor]";
+//	mes "Never herd of us?";
+//	mes "We Luke The Tailor are a new generation of stylist that are able to provide character appearance customization to players.";
+//	next;
+//	mes "But the difference between us and regular stylist is that we have a dressing room that allows you to try out different styles and dyes freely all together.";
+//	mes "This allows you to get a full preview of what your char will look like if you applied all the styles and dyes selected before finalizing what you want.";
+//	mes "Better then doing one at a time.";
+//	next;
+//	mes "Luke The Tailor can also change the appearance of the outfit you wear. We call them body styles. However, only 3rd job characters are offered this service at the moment.";
+//	mes "Also we don't have outfits ready for all of these jobs yet since this service is still very new and designs are still being worked on.";
+//	mes "Be sure to check back later if a style isnt available for your job as were releasing them one by one.";
+//	next;
+//	goto Lintro;
+}

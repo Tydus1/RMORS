@@ -1,0 +1,1 @@
+prontera,147,186,3	shop	OBB OPB OCA::boxtest	4_F_DOGTRAVELER,603:1,617:1,616:1,604:1

@@ -1,0 +1,85 @@
+ra_temsky,102,148,3	script	Kafra Ragnaminions::kaf_RM1	4_F_KAFRA9,{
+
+	cutin "kafra_09",2;
+	if (getgroupid() >= 1 ){
+	mes "[^1E90FF Kafra Vip^000000]";
+	mes "Seja muito bem vindo à sala vip!!";
+	mes "Eu sou a Kafra especial daqui.";
+	mes "Muitos serviços podem ser utilizados aqui na sala vip então sinta-se à vontade para explorar tudo.";
+	next;
+	mes "[^1E90FF Kafra Vip^000000]";
+	mes "Por favor, me diga em que eu posso ser útil.";
+	next;
+	switch( select("Utilizar armazém","Alugar um carrinho","Você sabia?","Cancelar")){
+		
+		case 1:
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Perfeito, aguarde só um segundo e abrirei seu armazém";
+			close2();
+			cutin("", 255);
+			progressbar("<1E90FF>", 1);
+			openstorage();
+			end;
+			break;
+	
+		case 2:
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Vamos ver...";
+			next;
+			if (BaseClass != Job_Merchant)
+		{
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Desculpe, mas só mercadores";
+			mes "e suas respectivas evoluções";
+			mes "podem alugar um carrinho.";
+		}else if(getskilllv(MC_PUSHCART) == 0)
+			{
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Você não possui a habilidade de";
+			mes "poder manejar um carrinho.";
+			next;
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Aprenda a habilidade primeiro e depois retorne a mim, okay?";
+			}else if(checkcart() == 1)
+		{
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Você já possui um carrinho!";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+		}else if(checkcart() == 0 ){
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Aqui está o seu carrinho.";
+			next;
+			mes "[^1E90FF Kafra Vip^000000]";
+			mes "Obrigada por utilizar meus serviços.";
+			setcart;
+			close2();
+			cutin("", 255);
+			end;
+			break;
+}
+			
+			
+		case 3:
+			mes "[^1E90FF Kafra Ragnaminions^000000]";
+			mes "Você já conhece a Premi?";
+			mes "Ela deve estar no jardim da sala vip agora.";
+			mes "Se gostar de itens visuais exclusivos, ela é a pessoa certa pra você.";
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+		case 4: 
+			close2();
+			cutin("", 255);
+			end;
+			break;
+
+			end;
+			break;
+	}
+}
+}
