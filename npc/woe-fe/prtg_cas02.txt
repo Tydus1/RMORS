@@ -112,7 +112,7 @@ prtg_cas02,153,161,4	duplicate(InsideFlagsPR2)	Swanhild#15	GUILD_FLAG
 prtg_cas02,162,161,4	duplicate(InsideFlagsPR2)	Swanhild#16	GUILD_FLAG
 
 //== Guild Flag (Town) =====================================
-prontera,146,194,3	duplicate(InsideFlagsPR2)	Swanhild#17	GUILD_FLAG
+prontera,162,238,3	duplicate(InsideFlagsPR2)	Swanhild#17	GUILD_FLAG
 
 //== Kafra Employee ========================================
 prtg_cas02,71,36,4	duplicate(guildkafra)	Kafra Staff#prtg_cas02	4_F_KAFRA1

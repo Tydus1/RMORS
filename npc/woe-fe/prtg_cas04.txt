@@ -110,7 +110,7 @@ prtg_cas04,263,20,4	duplicate(InsideFlagsPR4)	Skoegul#13	GUILD_FLAG
 prtg_cas04,263,27,4	duplicate(InsideFlagsPR4)	Skoegul#14	GUILD_FLAG
 
 //== Guild Flag (Town) =====================================
-prontera,167,203,6	duplicate(InsideFlagsPR4)	Skoegul#15	GUILD_FLAG
+prontera,149,248,5	duplicate(InsideFlagsPR4)	Skoegul#15	GUILD_FLAG
 
 //== Kafra Employee ========================================
 prtg_cas04,258,247,4	duplicate(guildkafra)	Kafra Staff#prtg_cas04	4_F_KAFRA1
